@@ -1,0 +1,191 @@
+export interface Project {
+  id: string;
+  title: string;
+  tagline: string;
+  category: string;
+  description: string;
+  role: string;
+  team: string;
+  timeline: string;
+  summary: string;
+  pdfUrl?: string;
+  challenges: string[];
+  process: {
+    phase: string;
+    description: string;
+  }[];
+  outcomes: string[];
+  images: string[];
+}
+
+export const projects: Record<string, Project> = {
+  squadra: {
+    id: "squadra",
+    title: "Squadra",
+    tagline: "Workforce management platform for shift-based businesses",
+    category: "Workforce Management",
+    description: "A comprehensive platform designed for managers in hospitality, clinics, and other shift-based environments. The product helps managers make day-to-day operational decisions quickly, surface problems early, and act without needing to interpret complex data.",
+    role: "UX/UI Designer & UX Writer",
+    team: "Design lead working with 1 Product Manager, 3 Engineers, and 1 Founder",
+    timeline: "2023–2024 (Ongoing)",
+    summary: "Squadra is a workforce management platform built for shift-based businesses like hospitality and healthcare. I led the design from early product framing through to detailed feature design and implementation support. The work focused on creating dashboards and flows that help managers make operational decisions quickly—surfacing problems early, enabling action without requiring deep data interpretation, and supporting both routine tasks and exception handling.",
+    challenges: [
+      "Design for managers under pressure who need to react quickly to changes",
+      "Surface staffing problems early without creating information overload",
+      "Enable decision-making across multiple time horizons (7-day vs monthly views)",
+      "Create flows that work for both routine and exception cases"
+    ],
+    process: [
+      {
+        phase: "Research & Structure",
+        description: "Mapped manager workflows, identified key decision points, and understood constraints of shift-based operations"
+      },
+      {
+        phase: "Information Architecture",
+        description: "Designed dashboard views that balance overview with actionable detail, structured around operational timeframes"
+      },
+      {
+        phase: "Core Flows",
+        description: "Built multi-step flows for Open Shifts (posting, applications, assignments) and messaging features"
+      },
+      {
+        phase: "System Design",
+        description: "Created alert systems for under/overstaffing, automated invoice generation, and billable item tracking"
+      }
+    ],
+    outcomes: [
+      "Manager dashboards supporting 7-day and monthly operational views",
+      "Staffing forecast system with actionable alerts",
+      "Complete Open Shifts feature from posting to assignment",
+      "Internal messaging system between managers and employees",
+      "Automated invoice generation with billable items"
+    ],
+    images: []
+  },
+  caveo: {
+    id: "caveo",
+    title: "Caveo",
+    tagline: "Digital financial planning structured around life situations",
+    category: "Financial Planning",
+    description: "A platform that makes complex financial planning accessible by structuring information around life situations rather than financial products. The work focused on creating trust through clarity and structure.",
+    role: "UX/UI Designer & UX Writer",
+    team: "Design lead working with 1 Product Manager, 2 Engineers, and 1 Founder",
+    timeline: "2023–2024 (Ongoing)",
+    summary: "Caveo is a digital financial planning platform that structures complex financial topics around life situations rather than products. I led the UX and UI design, focusing on multi-step flows that reduce cognitive load, clear language that builds trust without jargon, and information architecture that makes financial planning feel manageable. The work spanned product features, marketing pages, and content strategy.",
+    challenges: [
+      "Explain complex financial topics without overwhelming users",
+      "Build trust through structure and language rather than persuasion",
+      "Design multi-step flows that feel manageable despite complexity",
+      "Balance product features with marketing communication needs"
+    ],
+    process: [
+      {
+        phase: "Content Structure",
+        description: "Organized financial topics around life situations (insurance, assets, real estate, taxes, inheritance)"
+      },
+      {
+        phase: "User Flows",
+        description: "Designed multi-step survey and planning flows that reduce cognitive load at each step"
+      },
+      {
+        phase: "Product & Marketing",
+        description: "Created product pages, landing pages, and pricing comparisons that maintain clarity"
+      },
+      {
+        phase: "Language Design",
+        description: "Collaborated on UX writing to ensure every screen communicates clearly without jargon"
+      }
+    ],
+    outcomes: [
+      "Multi-step \"Your Financial Plan\" flow with situational surveys",
+      "Product and landing pages that explain without overwhelming",
+      "Pricing and package comparison interface",
+      "Survey screens for complex topics (insurance, inheritance, taxes)"
+    ],
+    images: []
+  },
+  nvoye: {
+    id: "nvoye",
+    title: "Nvoye",
+    tagline: "Private digital platform and community for diplomats",
+    category: "Professional Community",
+    description: "A discrete professional platform designed for diplomats, emphasizing trust, professionalism, and meaningful interaction over social media dynamics.",
+    role: "Product Designer",
+    team: "Sole designer working with 1 Product Manager, 2 Engineers, and 1 Founder",
+    timeline: "2022–2023",
+    summary: "Nvoye is a private professional platform designed for the diplomatic community, emphasizing discretion, trust, and meaningful interaction. I was the sole designer, responsible for community features, member profiles, messaging systems, and product storytelling. The work required designing for professionalism and security while avoiding social media patterns that would undermine trust.",
+    challenges: [
+      "Design for discretion and professionalism in a sensitive context",
+      "Avoid social media patterns while maintaining engagement",
+      "Create community features that feel trustworthy and purposeful",
+      "Balance openness with privacy and security concerns"
+    ],
+    process: [
+      {
+        phase: "Community Design",
+        description: "Designed member profiles and browsing that emphasize professional context over social metrics"
+      },
+      {
+        phase: "Messaging System",
+        description: "Built private messaging and group chat features with appropriate levels of discretion"
+      },
+      {
+        phase: "Product Story",
+        description: "Developed product storytelling and communication for community features"
+      },
+      {
+        phase: "Trust Patterns",
+        description: "Established design patterns that signal professionalism and security throughout the experience"
+      }
+    ],
+    outcomes: [
+      "Member profiles designed for professional context",
+      "Community browsing interface that avoids social media patterns",
+      "Private messaging and group chat system",
+      "Product storytelling framework for community features"
+    ],
+    images: []
+  },
+  foster: {
+    id: "foster",
+    title: "Foster the Family",
+    tagline: "Website redesign for family services organization",
+    category: "Web Design",
+    description: "A complete website redesign focused on making information accessible to families in need while maintaining organizational credibility and trust.",
+    role: "Web Designer",
+    team: "Independent project in collaboration with organization stakeholders",
+    timeline: "2023 (3 months)",
+    summary: "Foster the Family is a nonprofit supporting families in the foster care system. I redesigned their website to make critical information accessible to families under stress while serving multiple audiences (families seeking help, potential donors, volunteers, and partners). The work focused on information architecture, clear pathways to action, and a visual system that balances approachability with trust.",
+    challenges: [
+      "Make critical information easy to find for families under stress",
+      "Balance emotional appeal with practical information",
+      "Design for diverse audiences (families, donors, partners)",
+      "Create a system that can scale with organizational growth"
+    ],
+    process: [
+      {
+        phase: "Information Architecture",
+        description: "Restructured content around user needs and different audience types"
+      },
+      {
+        phase: "Content Strategy",
+        description: "Prioritized key information and designed clear pathways to action"
+      },
+      {
+        phase: "Visual System",
+        description: "Created a design system that feels approachable yet professional"
+      },
+      {
+        phase: "Responsive Design",
+        description: "Ensured all key information is accessible on mobile devices"
+      }
+    ],
+    outcomes: [
+      "Restructured information architecture serving multiple audiences",
+      "Clear pathways to key actions (getting help, donating, volunteering)",
+      "Responsive design system",
+      "Accessible, trust-building visual language"
+    ],
+    images: []
+  }
+};
