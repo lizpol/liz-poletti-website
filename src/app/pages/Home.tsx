@@ -66,11 +66,11 @@ import { useState, useRef, useEffect } from "react";
 import lizPhoto from "../../imports/Dreamwave-Photo__7_.png";
 import heroImage from "../../imports/Hero-image-1.png";
 import squadraImage from "../../imports/Squadra-Hero-image-EN.png";
-import checklistsImage from "../../imports/Tablet.png";
-import swapsImage from "../../imports/Swap-real.png";
+import checklistsImage from "../../imports/squadra-checklists-preview-v2.png";
+import swapsImage from "../../imports/squadra-swaps-preview-v2.png";
 import caveoImage from "../../imports/3.png";
-import nvoyeImage from "../../imports/Connections.png";
-import fosterImage from "../../imports/foster-preview.jpg";
+import nvoyeImage from "../../imports/nvoye-preview-v2.png";
+import fosterImage from "../../imports/foster-preview-v2.png";
 
 interface ProjectCardProps {
   number: string;
@@ -86,35 +86,35 @@ interface ProjectCardProps {
 const cardConfig: Record<string, { img: string; bg: string; fit: string; parent?: string }> = {
   squadra: {
     img: squadraImage,
-    bg: "bg-gradient-to-br from-[#201E50]/6 to-slate-100",
+    bg: "bg-[radial-gradient(ellipse_at_top,#f5f2ff_0%,#ede9fe_60%,#e3dcfa_100%)]",
     fit: "object-contain p-6",
   },
   "squadra-checklists": {
     img: checklistsImage,
-    bg: "bg-gradient-to-br from-violet-50 to-slate-50",
-    fit: "object-cover object-top",
+    bg: "bg-[#ede9fe]",
+    fit: "object-contain",
     parent: "Squadra",
   },
   "squadra-swaps": {
     img: swapsImage,
-    bg: "bg-gradient-to-br from-blue-50 to-indigo-50",
-    fit: "object-contain p-4",
+    bg: "bg-[#ede9fe]",
+    fit: "object-contain",
     parent: "Squadra",
   },
   caveo: {
     img: caveoImage,
-    bg: "bg-gradient-to-br from-sky-50 to-blue-100",
+    bg: "bg-[radial-gradient(ellipse_at_top,#edf6ff_0%,#dcecfb_60%,#cbdff3_100%)]",
     fit: "object-contain py-4",
   },
   nvoye: {
     img: nvoyeImage,
-    bg: "bg-slate-50",
-    fit: "object-cover object-top",
+    bg: "bg-[#dcecfb]",
+    fit: "object-contain",
   },
   foster: {
     img: fosterImage,
-    bg: "",
-    fit: "object-cover object-center",
+    bg: "bg-[#f3e9dd]",
+    fit: "object-contain",
   },
 };
 
