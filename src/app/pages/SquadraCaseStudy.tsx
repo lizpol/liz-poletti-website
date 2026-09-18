@@ -162,7 +162,7 @@ export default function SquadraCaseStudy() {
             <a href="mailto:polettilaiza@gmail.com" className="text-blue-800 hover:text-blue-900 text-sm transition-colors">Email</a>
             <a href="https://www.linkedin.com/in/laiza-poletti" target="_blank" rel="noopener noreferrer" className="text-blue-800 hover:text-blue-900 text-sm transition-colors">LinkedIn</a>
           </div>
-          <p className="text-slate-600 text-sm">© 2026 — Available for freelance work</p>
+          <p className="text-slate-600 text-sm">© 2026 Laiza Poletti</p>
         </div>
       </footer>
     </div>

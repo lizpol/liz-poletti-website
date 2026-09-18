@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { PointerEvent } from "react";
 import { Link } from "react-router";
 import { AnimatePresence, motion, useMotionValue, useReducedMotion, useSpring } from "motion/react";
-import { ArrowDown, ArrowRight, Plus } from "lucide-react";
+import { ArrowRight, Plus } from "lucide-react";
 import lizPhoto from "../../imports/Dreamwave-Photo__7_.png";
 import heroVisual from "../../imports/hero-sculpture.jpg";
 import "../../styles/home-hero.css";
@@ -79,7 +79,6 @@ export default function HomeHero() {
 
       <div className="hero-bottom">
         <span>6+ years of experience <span className="hero-dot">·</span> 20+ products designed</span>
-        <a href="#projects" aria-label="Scroll to selected work"><ArrowDown size={17} aria-hidden="true" /></a>
         <span>Thoughtful. Useful. Human.</span>
       </div>
     </section>

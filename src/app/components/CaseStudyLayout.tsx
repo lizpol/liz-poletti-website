@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Link } from "react-router";
 import { ArrowRight, Download } from "lucide-react";
 import Navigation from "./Navigation";
@@ -63,7 +64,7 @@ function StudyVisuals({ images, layout }: { images: StudyImage[]; layout?: Study
   );
 }
 
-export default function CaseStudyLayout({ study }: { study: StudyContent }) {
+export default function CaseStudyLayout({ study, heroVisual }: { study: StudyContent; heroVisual?: ReactNode }) {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -79,7 +80,7 @@ export default function CaseStudyLayout({ study }: { study: StudyContent }) {
             <h1 className="text-4xl md:text-6xl lg:text-7xl text-slate-900 leading-[1.08] tracking-tight max-w-4xl mb-6">{study.title}</h1>
             <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mb-10">{study.lead}</p>
             <div className="mb-10">
-              <img src={study.hero.src} alt={study.hero.alt} loading="eager" className="w-full h-auto max-h-[640px] object-contain" />
+              {heroVisual ?? <img src={study.hero.src} alt={study.hero.alt} loading="eager" className="w-full h-auto max-h-[640px] object-contain" />}
             </div>
             <dl className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6 border-b border-slate-200 pb-8">
               {study.meta.map(({ label, value }) => (
@@ -159,7 +160,7 @@ export default function CaseStudyLayout({ study }: { study: StudyContent }) {
             <a href="mailto:polettilaiza@gmail.com" className="text-blue-800 hover:text-blue-900 text-sm">Email</a>
             <a href="https://www.linkedin.com/in/laiza-poletti" target="_blank" rel="noopener noreferrer" className="text-blue-800 hover:text-blue-900 text-sm">LinkedIn</a>
           </div>
-          <p className="text-slate-600 text-sm">© 2026 — Available for freelance work</p>
+          <p className="text-slate-600 text-sm">© 2026 Laiza Poletti</p>
         </div>
       </footer>
     </div>

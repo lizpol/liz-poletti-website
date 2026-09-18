@@ -1,0 +1,96 @@
+.checklist-cover {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  container-type: size;
+  background: radial-gradient(ellipse at 48% 38%, #faf8ff 0%, #e7dffd 50%, #c8b7ed 100%);
+}
+.checklist-cover::before {
+  content: '';
+  position: absolute;
+  width: 75%;
+  aspect-ratio: 1;
+  left: 12.5%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  border: 1px solid #ffffff60;
+  background: #ffffff16;
+}
+.checklist-phones {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1100px;
+}
+.checklist-phone {
+  position: relative;
+  flex: 0 0 auto;
+  height: 78%;
+  aspect-ratio: 0.47;
+  padding: 4px;
+  border: 1px solid #66616e;
+  border-radius: 19px;
+  background: linear-gradient(120deg, #353139, #101014 55%, #29252f);
+  box-shadow: 2px 3px 0 #08080a, 8px 18px 22px #30214d38;
+  transition: transform 650ms cubic-bezier(.2,.75,.2,1), box-shadow 650ms ease;
+}
+.checklist-phone-overview {
+  z-index: 1;
+  transform: translate(9%, -3%) rotate(-16deg) rotateY(10deg);
+}
+.checklist-phone-task {
+  z-index: 2;
+  margin-left: -12px;
+  transform: translate(-5%, 4%) rotate(12deg) rotateY(-10deg);
+}
+.checklist-phone-screen {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  background: white;
+}
+.checklist-phone-screen img { display: block; width: 100%; height: 100%; object-fit: contain; }
+/* Preserve the screenshot at mobile width inside a natural scroll viewport. */
+.checklist-overview-screen img { height: auto; max-width: none; }
+.checklist-cover-large { height: clamp(340px, 50vw, 600px); }
+@supports (height: 1cqh) {
+  .checklist-phone { height: min(78cqh, 78cqw); padding: 1.2cqh; border-radius: 6cqh; }
+  .checklist-phone-task { margin-left: -4cqh; }
+  .checklist-phone-screen { border-radius: 4.8cqh; }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .project-link:hover .checklist-phone-overview,
+  .checklist-cover-large:hover .checklist-phone-overview {
+    transform: translate(-6%, -5%) rotate(-20deg) rotateY(4deg);
+    box-shadow: 2px 3px 0 #08080a, 12px 23px 28px #30214d45;
+  }
+  .project-link:hover .checklist-phone-task,
+  .checklist-cover-large:hover .checklist-phone-task {
+    transform: translate(10%, -2%) rotate(16deg) rotateY(-4deg);
+    box-shadow: 2px 3px 0 #08080a, 12px 23px 28px #30214d45;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .project-link:focus-visible .checklist-phone-overview { transform: translate(-6%, -5%) rotate(-20deg) rotateY(4deg); }
+  .project-link:focus-visible .checklist-phone-task { transform: translate(10%, -2%) rotate(16deg) rotateY(-4deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .checklist-phone { transition: none; }
+}
+
+.checklist-study { display: grid; grid-template-columns: repeat(2, minmax(0, 280px)); justify-content: center; gap: clamp(20px, 5vw, 64px); padding: clamp(20px, 4vw, 48px); background: #f3f0fa; border-radius: 16px; }
+.checklist-study-phone { display: block; aspect-ratio: .47; overflow: hidden; background: white; border: 7px solid #19191d; border-radius: 30px; box-shadow: 0 12px 24px #201e5015; }
+.checklist-study-phone img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.checklist-study-list img { height: auto; }
+.checklist-study figcaption { text-align: center; color: #626779; font-size: 12px; line-height: 1.6; margin-top: 18px; }
+.checklist-study figcaption span { display: block; font-size: 10px; margin-top: 4px; }
+.checklist-study a:focus-visible { outline: 2px solid #5275aa; outline-offset: 5px; }
+@media (max-width: 480px) {
+  .checklist-study { padding: 20px 12px; gap: 14px; }
+  .checklist-study-phone { border-width: 4px; border-radius: 18px; }
+}

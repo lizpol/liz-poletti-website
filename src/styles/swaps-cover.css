@@ -1,0 +1,29 @@
+.swaps-cover { position: relative; height: 100%; width: 100%; overflow: hidden; container-type: size; background: radial-gradient(ellipse at 45% 40%, #faf8ff, #e7dffd 70%, #dacdf2); }
+.swaps-cover-phone { position: absolute; height: 82%; aspect-ratio: .47; top: 9%; left: 39%; padding: 4px; border: 1px solid #66616e; border-radius: 20px; background: #19191d; box-shadow: 2px 3px 0 #08080a, 6px 16px 24px #30214d28; transform: translateX(-50%) rotate(-5deg); transition: transform 650ms cubic-bezier(.2,.75,.2,1); }
+.swaps-cover-phone img { width: 100%; height: 100%; object-fit: contain; border-radius: 15px; background: white; }
+.swaps-candidate { position: absolute; width: 39%; max-width: 230px; height: auto; transition: transform 650ms cubic-bezier(.2,.75,.2,1); }
+.swaps-candidate-good { top: 43%; left: 48%; transform: rotate(2deg); }
+@supports (height: 1cqh) {
+  .swaps-cover-phone { padding: 1.2cqh; border-radius: 6cqh; }
+  .swaps-cover-phone img { border-radius: 4.8cqh; }
+  .swaps-candidate { width: min(39cqw, 65cqh); }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .project-link:hover .swaps-cover-phone { transform: translate(-50%, -2%) rotate(-2deg); }
+  .project-link:hover .swaps-candidate-good { transform: translate(3%, -5%) rotate(0deg); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .project-link:focus-visible .swaps-cover-phone { transform: translate(-50%, -2%) rotate(-2deg); }
+  .project-link:focus-visible .swaps-candidate-good { transform: translate(3%, -5%) rotate(0deg); }
+}
+@media (prefers-reduced-motion: reduce) { .swaps-cover-phone, .swaps-candidate { transition: none; } }
+.swaps-study { display: grid; grid-template-columns: minmax(0, 280px) minmax(0, 360px); justify-content: center; align-items: center; gap: clamp(24px, 5vw, 64px); padding: clamp(20px, 4vw, 48px); background: #f3f0fa; border-radius: 16px; }
+.swaps-study-phone { display: block; border: 7px solid #19191d; border-radius: 30px; overflow: hidden; box-shadow: 0 12px 24px #201e5015; }
+.swaps-study img { width: 100%; height: auto; }
+.swaps-study-candidates { display: grid; gap: 30px; }
+.swaps-study figcaption { color: #626779; text-align: center; font-size: 12px; line-height: 1.6; margin-top: 12px; }
+.swaps-study a:focus-visible { outline: 2px solid #5275aa; outline-offset: 5px; }
+@media (max-width: 600px) {
+  .swaps-study { grid-template-columns: minmax(0, 300px); }
+  .swaps-study-phone { max-width: 240px; margin: auto; }
+}
