@@ -4,8 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, ChevronDown, CheckCircle2, Mail, Copy } from "lucide-react";
 
 import { useState, useRef, useEffect } from "react";
-import lizPhoto from "../../imports/Dreamwave-Photo__7_.png";
-import "../../styles/home-hero.css";
+import HomeHero from "../components/HomeHero";
 import squadraImage from "../../imports/squadra-three-devices.png";
 import checklistsImage from "../../imports/Checklist-EN.png";
 import swapsImage from "../../imports/squadra-swaps-preview-v2.png";
@@ -405,61 +404,7 @@ export default function Home() {
     <div className="min-h-screen bg-slate-50">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="home-hero" aria-labelledby="hero-heading">
-        <div className="hero-shell">
-          <div className="hero-eyebrow">
-            <span>UX / Product Designer</span>
-            <span className="hero-edition">Thoughtful by design.</span>
-          </div>
-
-          <div className="hero-composition">
-            <div className="hero-copy">
-              <div className="hero-intro">
-                <img src={lizPhoto} alt="Liz" width="44" height="44" />
-                <span>Hi, I’m Liz.</span>
-              </div>
-              <h1 id="hero-heading">
-                Complex<br />products.<br />
-                <span className="hero-serif">Simple</span> experiences.
-              </h1>
-              <p className="hero-description">
-                I turn complexity into clear, intuitive experiences.
-                From structure and flows to UI and words — everything users touch.
-              </p>
-              <div className="hero-actions">
-                <a href="#projects" className="hero-work-link">
-                  Explore my work <span><ArrowRight size={19} aria-hidden="true" /></span>
-                </a>
-                <Link to="/about" className="hero-about-link">A little about me <ArrowRight size={15} aria-hidden="true" /></Link>
-              </div>
-            </div>
-
-            <div className="hero-art" aria-hidden="true">
-              <div className="hero-art-caption"><span>01 — A little less friction</span><span>↗</span></div>
-              <svg className="hero-thread" viewBox="0 0 460 480" fill="none">
-                <path className="hero-thread-loose" d="M42 88 C178 3 328 45 304 143 C275 264 38 166 98 95 C149 35 358 185 270 241 C184 296 71 165 145 143 C231 117 380 289 267 316 C175 338 121 230 179 224 C264 214 265 341 289 360" />
-                <path className="hero-thread-clear" d="M289 360 C304 384 342 371 342 402 L342 445" />
-                <path className="hero-thread-clear" d="M334 437 L342 446 L350 437" />
-              </svg>
-              <span className="hero-art-note">There’s a simpler way.</span>
-              <div className="hero-solution">
-                <div className="hero-solution-top"><span className="hero-solution-icon"><CheckCircle2 size={22} /></span><span>Made to make sense</span><span>↗</span></div>
-                <div className="hero-solution-title">Clarity, by design.</div>
-                <div className="hero-solution-bottom"><span>Less effort. More flow.</span><span className="hero-solution-line" /></div>
-              </div>
-              <span className="hero-art-footnote">From the complicated to the intuitive.</span>
-              <svg className="hero-asterisk" viewBox="0 0 80 80"><path d="M40 0v80M0 40h80M12 12l56 56M12 68l56-56" stroke="currentColor" strokeWidth="9" /></svg>
-            </div>
-          </div>
-
-          <div className="hero-footer">
-            <div className="hero-stat"><strong>6+</strong><span>years of experience</span></div>
-            <div className="hero-stat"><strong>20+</strong><span>products designed</span></div>
-            <p>Workforce management <span> / </span> Finance <span> / </span> Digital services</p>
-          </div>
-        </div>
-      </section>
+      <HomeHero />
 
       {/* Projects Section */}
       <section id="projects" className="px-6 md:px-16 lg:px-24 py-32 relative">
