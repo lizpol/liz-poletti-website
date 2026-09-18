@@ -3,68 +3,9 @@ import Navigation from "../components/Navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, ChevronDown, CheckCircle2, Mail, Copy } from "lucide-react";
 
-function HeroIllustration() {
-  return (
-    <div className="relative w-full" style={{ minHeight: 420 }}>
-
-      {/* Sticky note */}
-      <div className="absolute" style={{ top: '2%', left: '0%', width: '56%', transform: 'rotate(-2.5deg)' }}>
-        <div className="relative bg-amber-100 shadow-xl px-6 py-5 pb-8">
-          {/* Tape strip */}
-          <div
-            className="absolute -top-4 left-1/2 -translate-x-1/2 w-16 h-5"
-            style={{ background: 'rgba(254,240,138,0.75)', border: '1px solid rgba(253,224,71,0.4)', boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.06)' }}
-          />
-          <p style={{ fontFamily: "'Caveat', cursive", fontSize: '1.35rem', lineHeight: 1.55, color: '#374151' }}>
-            Make it easy<br />
-            to do the<br />
-            <span style={{ textDecoration: 'underline' }}>right thing.</span>
-          </p>
-        </div>
-      </div>
-
-      {/* SVG dashed connector */}
-      <svg
-        className="absolute inset-0 w-full h-full pointer-events-none"
-        viewBox="0 0 420 340"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="xMidYMid meet"
-      >
-        <path
-          d="M 235 130 C 270 100 330 110 365 185"
-          stroke="#201E50"
-          strokeWidth="1.6"
-          strokeDasharray="5 5"
-          strokeLinecap="round"
-        />
-      </svg>
-
-      {/* Sparkle circle */}
-      <div
-        className="absolute flex items-center justify-center rounded-full bg-blue-50 border border-blue-100"
-        style={{ top: '42%', right: '6%', width: 100, height: 100, boxShadow: '0 2px 16px rgba(32,30,80,0.07)' }}
-      >
-        {/* 4-pointed sparkle */}
-        <svg viewBox="0 0 32 32" fill="none" style={{ width: 42, height: 42 }}>
-          <path
-            d="M16 2 L17.8 13.2 L29 16 L17.8 18.8 L16 30 L14.2 18.8 L3 16 L14.2 13.2 Z"
-            fill="#201E50"
-          />
-          <path
-            d="M25 5 L25.7 8.3 L29 9 L25.7 9.7 L25 13 L24.3 9.7 L21 9 L24.3 8.3 Z"
-            fill="#5C80BC"
-            opacity="0.7"
-          />
-        </svg>
-      </div>
-
-    </div>
-  );
-}
 import { useState, useRef, useEffect } from "react";
 import lizPhoto from "../../imports/Dreamwave-Photo__7_.png";
-import heroImage from "../../imports/Hero-image-1.png";
+import "../../styles/home-hero.css";
 import squadraImage from "../../imports/squadra-three-devices.png";
 import checklistsImage from "../../imports/Checklist-EN.png";
 import swapsImage from "../../imports/squadra-swaps-preview-v2.png";
@@ -465,95 +406,58 @@ export default function Home() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-32 pb-0">
-        <div className="absolute top-1/2 right-0 w-[700px] h-[700px] bg-blue-100/25 rounded-full blur-3xl -translate-y-1/2 pointer-events-none" />
-
-        <div className="max-w-7xl w-full mx-auto relative z-10 px-6 md:px-16 lg:px-24">
-          {/* Two-column: text left, illustration right */}
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center pb-16">
-
-            {/* Left: text — fixed, does not grow */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-            >
-              {/* Tag — same style and colour as "Selected Work" label */}
-              <div className="flex items-center gap-4 mb-7">
-                <div className="h-px w-6 bg-blue-800/40" />
-                <span className="text-blue-800 text-xs tracking-[0.2em] uppercase">UX / Product Designer</span>
-                <div className="h-px w-6 bg-blue-800/40" />
-              </div>
-
-              {/* Avatar + greeting */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-full border-2 border-[#201E50]/20 flex-shrink-0 overflow-hidden shadow-sm">
-                  <img src={lizPhoto} alt="Liz" className="w-full h-full object-cover object-top" />
-                </div>
-                <span className="text-[#201E50] text-sm font-medium">Hi, I'm Liz.</span>
-              </div>
-
-              {/* Headline */}
-              <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] text-slate-900 leading-[1.1] tracking-tight mb-6">
-                I design complex<br />
-                products that feel<br />
-                <span className="italic font-serif text-[#5C80BC]">simple.</span>
-              </h1>
-
-              {/* Body */}
-              <p className="text-slate-600 leading-relaxed mb-4 max-w-sm">
-                I help teams turn complexity into clear, intuitive experiences. From structure and flows to UI and words — everything users touch.
-              </p>
-              <p className="text-slate-600 leading-relaxed mb-10 max-w-sm">
-                Currently designing products across workforce management, finance and digital services.
-              </p>
-
-              {/* CTA */}
-              <Link
-                to="/#projects"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-[#201E50] text-white rounded-full hover:bg-[#5C80BC] transition-all duration-300 shadow-lg shadow-[#201E50]/20 text-sm tracking-wide uppercase"
-              >
-                View My Work
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </motion.div>
-
-            {/* Right: hero image */}
-            <motion.div
-              className="flex items-center justify-center"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.15 }}
-            >
-              <img
-                src={heroImage}
-                alt="Make it easy to do the right thing"
-                className="w-full"
-                style={{ maxWidth: 560 }}
-              />
-            </motion.div>
+      <section className="home-hero" aria-labelledby="hero-heading">
+        <div className="hero-shell">
+          <div className="hero-eyebrow">
+            <span>UX / Product Designer</span>
+            <span className="hero-edition">Thoughtful by design.</span>
           </div>
 
-          {/* Stats strip */}
-          <motion.div
-            className="border-t border-slate-200 py-10 grid grid-cols-2 md:grid-cols-4 gap-8"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
-          >
-            {[
-              { value: "6+",         unit: "years",      sub: "experience" },
-              { value: "20+",        unit: "products",   sub: "designed" },
-              { value: "B2B",        unit: "SaaS focus", sub: "across industries" },
-              { value: "User-first", unit: "mindset",    sub: "in everything" },
-            ].map(({ value, unit, sub }) => (
-              <div key={value}>
-                <div className="text-2xl md:text-3xl font-bold leading-none mb-1 text-[#5C80BC]">{value}</div>
-                <div className="text-slate-900 text-sm font-medium mb-0.5">{unit}</div>
-                <div className="text-slate-400 text-xs">{sub}</div>
+          <div className="hero-composition">
+            <div className="hero-copy">
+              <div className="hero-intro">
+                <img src={lizPhoto} alt="Liz" width="44" height="44" />
+                <span>Hi, I’m Liz.</span>
               </div>
-            ))}
-          </motion.div>
+              <h1 id="hero-heading">
+                Complex<br />products.<br />
+                <span className="hero-serif">Simple</span> experiences.
+              </h1>
+              <p className="hero-description">
+                I turn complexity into clear, intuitive experiences.
+                From structure and flows to UI and words — everything users touch.
+              </p>
+              <div className="hero-actions">
+                <a href="#projects" className="hero-work-link">
+                  Explore my work <span><ArrowRight size={19} aria-hidden="true" /></span>
+                </a>
+                <Link to="/about" className="hero-about-link">A little about me <ArrowRight size={15} aria-hidden="true" /></Link>
+              </div>
+            </div>
+
+            <div className="hero-art" aria-hidden="true">
+              <div className="hero-art-caption"><span>01 — A little less friction</span><span>↗</span></div>
+              <svg className="hero-thread" viewBox="0 0 460 480" fill="none">
+                <path className="hero-thread-loose" d="M42 88 C178 3 328 45 304 143 C275 264 38 166 98 95 C149 35 358 185 270 241 C184 296 71 165 145 143 C231 117 380 289 267 316 C175 338 121 230 179 224 C264 214 265 341 289 360" />
+                <path className="hero-thread-clear" d="M289 360 C304 384 342 371 342 402 L342 445" />
+                <path className="hero-thread-clear" d="M334 437 L342 446 L350 437" />
+              </svg>
+              <span className="hero-art-note">There’s a simpler way.</span>
+              <div className="hero-solution">
+                <div className="hero-solution-top"><span className="hero-solution-icon"><CheckCircle2 size={22} /></span><span>Made to make sense</span><span>↗</span></div>
+                <div className="hero-solution-title">Clarity, by design.</div>
+                <div className="hero-solution-bottom"><span>Less effort. More flow.</span><span className="hero-solution-line" /></div>
+              </div>
+              <span className="hero-art-footnote">From the complicated to the intuitive.</span>
+              <svg className="hero-asterisk" viewBox="0 0 80 80"><path d="M40 0v80M0 40h80M12 12l56 56M12 68l56-56" stroke="currentColor" strokeWidth="9" /></svg>
+            </div>
+          </div>
+
+          <div className="hero-footer">
+            <div className="hero-stat"><strong>6+</strong><span>years of experience</span></div>
+            <div className="hero-stat"><strong>20+</strong><span>products designed</span></div>
+            <p>Workforce management <span> / </span> Finance <span> / </span> Digital services</p>
+          </div>
         </div>
       </section>
 
