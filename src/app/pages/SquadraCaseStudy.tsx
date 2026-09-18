@@ -3,11 +3,11 @@ import { ArrowRight } from "lucide-react";
 import Navigation from "../components/Navigation";
 import Breadcrumb from "../components/Breadcrumb";
 
-import heroImg from "../../imports/Squadra-Hero-image-EN.png";
+import heroImg from "../../imports/squadra-three-devices.png";
 import desktopImg from "../../imports/squadra-desktop.png";
 import tabletImg from "../../imports/squadra-tablet.png";
 import mobileImg from "../../imports/squadra-mobile.png";
-import checklistsImg from "../../imports/squadra-checklists-preview-v2.png";
+import checklistsImg from "../../imports/Checklist-EN.png";
 import swapsImg from "../../imports/squadra-swaps-preview-v2.png";
 
 const caseStudies = [
@@ -51,8 +51,8 @@ export default function SquadraCaseStudy() {
               Designing the everyday tools that help businesses plan shifts, manage their teams and keep work moving.
             </p>
 
-            <div className="rounded-3xl bg-[#f3f2f8] px-4 pt-6 md:px-12 md:pt-10 overflow-hidden mb-10">
-              <img src={heroImg} alt="Squadra workforce management across desktop, tablet and mobile" className="w-full h-auto" fetchPriority="high" />
+            <div className="mb-10">
+              <img src={heroImg} alt="Squadra workforce management across desktop, tablet and mobile" className="w-full h-auto" loading="eager" />
             </div>
 
             <dl className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6 border-b border-slate-200 pb-8">
@@ -76,13 +76,14 @@ export default function SquadraCaseStudy() {
             </h2>
             <div className="text-lg text-slate-600 leading-relaxed space-y-5">
               <p>
-                Squadra is a workforce management platform for restaurants, clinics and hospitality businesses. It brings scheduling, time tracking and team operations together across desktop, shared tablets and an employee app.
+                Squadra is a workforce management ecosystem for any business that works in shifts. It connects the tools managers use to plan, oversee and manage operations with the tools employees use to organise their working lives, across desktop, shared tablets and mobile.
               </p>
               <p>
-                I joined as a product designer when the platform was already part of teams’ daily routines. Working closely with founders, product and engineering, I spent more than two years improving existing workflows and shaping new features as the business grew.
+                I joined an established product and spent more than two years working across both sides of it. Customer feedback helped us identify where flows needed improvement. My work was to make complex rules, connected workflows and large amounts of data easier to understand and act on.
               </p>
               <p>
-                My work spanned discovery, user flows, UI, UX writing and implementation support — from rethinking scheduling to introducing checklists and shift swaps. Customer feedback guided the larger projects and the small, everyday refinements alike.
+                Alongside those improvements, I designed new features from scratch, from early flows through UI, UX writing and implementation support. Some extended existing capabilities; others became add-ons — small products within the product. Checklists and Shift Swaps are two of these, explored in{" "}
+                <a href="#dedicated-case-studies" className="text-[#201E50] underline underline-offset-4 hover:text-blue-800 focus-visible:outline-2 focus-visible:outline-offset-4">the dedicated case studies</a>.
               </p>
             </div>
           </section>
@@ -94,10 +95,10 @@ export default function SquadraCaseStudy() {
                 <h2 id="desktop-title" className="text-3xl md:text-4xl text-slate-900 tracking-tight leading-tight">The bigger picture</h2>
               </div>
               <p className="text-lg text-slate-600 leading-relaxed md:pt-8">
-                I redesigned planning, shift editing and publishing, and worked across time tracking, employee management and reporting. The focus was on helping managers make sense of busy schedules and handle everyday decisions more easily.
+                I improved flows across planning, time tracking, employee management and reporting. With so much connected information to display, I focused on what managers needed to see, decide and do next — turning detailed operational data into clear overviews and actions.
               </p>
             </div>
-            <div className="rounded-3xl bg-[#f5f5f7] p-5 md:p-12">
+            <div className="w-full">
               <img src={desktopImg} alt="Squadra desktop dashboard showing today's shifts, manager approvals and upcoming schedules" width={2400} height={1897} loading="lazy" className="w-full h-auto" />
             </div>
           </section>
@@ -112,7 +113,7 @@ export default function SquadraCaseStudy() {
                 On shared workplace tablets, I designed flows for time tracking and daily tasks. From checking who’s on shift to completing a checklist, the experience needed to be clear and quick to use in the middle of a working day.
               </p>
             </div>
-            <div className="rounded-3xl bg-[#f3f2f8] p-5 md:p-12">
+            <div className="w-full">
               <img src={tabletImg} alt="Squadra shared tablet showing team members and their time tracking sessions" width={2000} height={1540} loading="lazy" className="w-full h-auto" />
             </div>
           </section>
@@ -125,13 +126,13 @@ export default function SquadraCaseStudy() {
                 I shaped the employee experience around schedules, availability, messages and shift management. From finding the next shift to requesting a swap, I worked to make everyday actions easy to find and follow through.
               </p>
             </div>
-            <div className="rounded-3xl bg-[#f5f5f7] p-6 md:p-10 flex justify-center">
+            <div className="flex justify-center">
               <img src={mobileImg} alt="Squadra mobile app home screen with an upcoming shift, tasks and open shifts" width={780} height={1400} loading="lazy" className="w-full max-w-[300px] h-auto" />
             </div>
           </section>
         </div>
 
-        <section aria-labelledby="case-studies-title" className="bg-slate-50 py-16 md:py-24 px-6 md:px-12 lg:px-24">
+        <section id="dedicated-case-studies" aria-labelledby="case-studies-title" className="scroll-mt-24 bg-slate-50 py-16 md:py-24 px-6 md:px-12 lg:px-24">
           <div className="max-w-5xl mx-auto">
             <p className="text-xs tracking-widest uppercase text-slate-500 mb-4">A closer look</p>
             <h2 id="case-studies-title" className="text-3xl md:text-4xl text-slate-900 tracking-tight mb-4">Two features, from the inside</h2>
@@ -139,7 +140,7 @@ export default function SquadraCaseStudy() {
             <div className="grid md:grid-cols-2 gap-8">
               {caseStudies.map(({ title, description, image, href }) => (
                 <Link key={href} to={href} className="group rounded-2xl overflow-hidden bg-white border border-slate-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#201E50]">
-                  <img src={image} alt={`${title} product preview`} loading="lazy" className="w-full aspect-[16/10] object-cover" />
+                  <img src={image} alt={`${title} product preview`} loading="lazy" className={`w-full aspect-[16/10] ${href === "/work/squadra-checklists" ? "object-contain" : "object-cover"}`} />
                   <div className="p-6 md:p-8">
                     <h3 className="text-xl text-slate-900 mb-3">{title}</h3>
                     <p className="text-slate-600 leading-relaxed mb-6">{description}</p>

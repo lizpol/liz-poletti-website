@@ -7,16 +7,17 @@ export interface StudyImage {
   src: string;
   alt: string;
   caption?: string;
+  preview?: "navigation";
 }
 
 export interface StudySection {
   id: string;
   label: string;
   title: string;
-  challenge: string;
   paragraphs: string[];
   images?: StudyImage[];
-  layout?: "phones" | "devices" | "compact";
+  layout?: "phones" | "devices" | "compact" | "comparison" | "stacked";
+  link?: { href: string; label: string };
 }
 
 export interface StudyContent {
@@ -40,19 +41,21 @@ function StudyVisuals({ images, layout }: { images: StudyImage[]; layout?: Study
     ? "grid md:grid-cols-[3fr_1fr] gap-8 items-center"
     : layout === "phones"
       ? "grid sm:grid-cols-3 gap-8 items-start"
-      : images.length > 1 ? "grid md:grid-cols-2 gap-8 items-start" : "grid";
+      : images.length > 1 && layout !== "stacked" ? "grid md:grid-cols-2 gap-8 items-start" : "grid gap-8";
 
   return (
-    <div className={`rounded-3xl bg-[#f5f5f7] p-5 md:p-10 ${grid}`}>
-      {images.map(({ src, alt, caption }, index) => (
+    <div className={grid}>
+      {images.map(({ src, alt, caption, preview }, index) => (
         <figure key={src} className="min-w-0">
-          <img
-            src={src}
-            alt={alt}
-            loading="lazy"
-            decoding="async"
-            className={`w-full h-auto mx-auto ${layout === "phones" ? "max-w-[260px]" : layout === "compact" ? "max-w-sm" : layout === "devices" && index > 0 ? "max-w-[200px]" : ""}`}
-          />
+          <a href={src} target="_blank" rel="noopener noreferrer" aria-label={`Open full image: ${alt}`} className="block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#201E50]">
+            <img
+              src={src}
+              alt={alt}
+              loading="lazy"
+              decoding="async"
+              className={`w-full mx-auto ${preview === "navigation" ? "aspect-[21/1] object-cover object-top" : "h-auto"} ${layout === "phones" ? "max-w-[260px]" : layout === "compact" ? "max-w-sm" : layout === "devices" && index > 0 ? "max-w-[200px]" : ""}`}
+            />
+          </a>
           {caption && <figcaption className="text-sm text-slate-500 leading-relaxed text-center mt-4">{caption}</figcaption>}
         </figure>
       ))}
@@ -75,7 +78,7 @@ export default function CaseStudyLayout({ study }: { study: StudyContent }) {
             <p className="text-[#201E50] text-xs tracking-widest uppercase mb-5">{study.name} · {study.category}</p>
             <h1 className="text-4xl md:text-6xl lg:text-7xl text-slate-900 leading-[1.08] tracking-tight max-w-4xl mb-6">{study.title}</h1>
             <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mb-10">{study.lead}</p>
-            <div className="rounded-3xl bg-[#f3f2f8] p-5 md:p-10 overflow-hidden mb-10">
+            <div className="mb-10">
               <img src={study.hero.src} alt={study.hero.alt} loading="eager" className="w-full h-auto max-h-[640px] object-contain" />
             </div>
             <dl className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6 border-b border-slate-200 pb-8">
@@ -104,22 +107,18 @@ export default function CaseStudyLayout({ study }: { study: StudyContent }) {
             ))}
           </nav>
 
-          {study.sections.map(({ id, label, title, challenge, paragraphs, images, layout }) => (
+          {study.sections.map(({ id, label, title, paragraphs, images, layout, link }) => (
             <section key={id} id={id} aria-labelledby={`${id}-title`} className="scroll-mt-28 pb-20 md:pb-28">
               <div className={`grid md:grid-cols-[1fr_1.4fr] gap-6 md:gap-16 ${images ? "mb-10" : ""}`}>
                 <div>
                   <p className="text-xs tracking-widest uppercase text-slate-500 mb-4">{label}</p>
                   <h2 id={`${id}-title`} className="text-3xl md:text-4xl text-slate-900 tracking-tight leading-tight">{title}</h2>
-                  <div className="mt-6 border-l border-slate-200 pl-4">
-                    <h3 className="text-xs tracking-widest uppercase text-slate-500 mb-2">The challenge</h3>
-                    <p className="text-base text-slate-600 leading-relaxed">{challenge}</p>
-                  </div>
                 </div>
                 <div className="md:pt-8">
-                  <h3 className="text-xs tracking-widest uppercase text-[#201E50] mb-4">The design response</h3>
                   <div className="text-lg text-slate-600 leading-relaxed space-y-5">
                     {paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                   </div>
+                  {link && <a href={link.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-5 text-sm text-[#201E50] hover:underline underline-offset-4">{link.label} <ArrowRight aria-hidden="true" className="w-4 h-4" /></a>}
                 </div>
               </div>
               {images && <StudyVisuals images={images} layout={layout} />}

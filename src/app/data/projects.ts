@@ -24,11 +24,11 @@ export const projects: Record<string, Project> = {
     title: "Squadra",
     tagline: "Workforce management platform for shift-based businesses",
     category: "Workforce Management",
-    description: "A comprehensive platform designed for managers in hospitality, clinics, and other shift-based environments. The product helps managers make day-to-day operational decisions quickly, surface problems early, and act without needing to interpret complex data.",
+    description: "A workforce management ecosystem for any business that works in shifts, connecting manager and employee experiences across desktop, shared tablets and mobile. The UX challenge is to make complex rules, connected workflows and large amounts of operational data clear and actionable.",
     role: "UX/UI Designer & UX Writer",
     team: "Design lead working with 1 Product Manager, 3 Engineers, and 1 Founder",
     timeline: "2023–2024 (Ongoing)",
-    summary: "Squadra is a workforce management platform built for shift-based businesses like hospitality and healthcare. I led the design from early product framing through to detailed feature design and implementation support. The work focused on creating dashboards and flows that help managers make operational decisions quickly—surfacing problems early, enabling action without requiring deep data interpretation, and supporting both routine tasks and exception handling.",
+    summary: "I joined an established product and worked across its manager and employee experiences for more than two years. Customer feedback informed improvements to existing flows, alongside new features designed from scratch. My work spanned user flows, UI, UX writing and implementation support, including add-ons such as Checklists and Shift Swaps: small products within the wider ecosystem.",
     challenges: [
       "Design for managers under pressure who need to react quickly to changes",
       "Surface staffing problems early without creating information overload",
@@ -151,11 +151,11 @@ export const projects: Record<string, Project> = {
     title: "Foster the Family",
     tagline: "Website redesign for family services organization",
     category: "Web Design",
-    description: "A complete website redesign focused on making information accessible to families in need while maintaining organizational credibility and trust.",
-    role: "Web Designer",
+    description: "A focused redesign of key pages, combining UX/UI design, UX writing and clearer navigation to help families find support and others get involved.",
+    role: "UX/UI Designer & UX Writer",
     team: "Independent project in collaboration with organization stakeholders",
-    timeline: "2023 (3 months)",
-    summary: "Foster the Family is a nonprofit supporting families in the foster care system. I redesigned their website to make critical information accessible to families under stress while serving multiple audiences (families seeking help, potential donors, volunteers, and partners). The work focused on information architecture, clear pathways to action, and a visual system that balances approachability with trust.",
+    timeline: "Short-term engagement",
+    summary: "Foster the Family is a nonprofit supporting families in the foster care system. I was hired for a quick redesign of the homepage, Get Help and Donate pages. Alongside UI/UX design, I worked extensively on the language, navigation and information architecture to make support easier to find and participation easier to understand. My involvement focused on these key pages rather than the full website.",
     challenges: [
       "Make critical information easy to find for families under stress",
       "Balance emotional appeal with practical information",
@@ -173,7 +173,7 @@ export const projects: Record<string, Project> = {
       },
       {
         phase: "Visual System",
-        description: "Created a design system that feels approachable yet professional"
+        description: "Designed key page layouts that balance approachability with clarity"
       },
       {
         phase: "Responsive Design",
@@ -183,8 +183,8 @@ export const projects: Record<string, Project> = {
     outcomes: [
       "Restructured information architecture serving multiple audiences",
       "Clear pathways to key actions (getting help, donating, volunteering)",
-      "Responsive design system",
-      "Accessible, trust-building visual language"
+      "Redesigned homepage, Get Help and Donate pages",
+      "Clearer UX writing across navigation, support information and giving options"
     ],
     images: []
   }

@@ -65,8 +65,8 @@ function HeroIllustration() {
 import { useState, useRef, useEffect } from "react";
 import lizPhoto from "../../imports/Dreamwave-Photo__7_.png";
 import heroImage from "../../imports/Hero-image-1.png";
-import squadraImage from "../../imports/Squadra-Hero-image-EN.png";
-import checklistsImage from "../../imports/squadra-checklists-preview-v2.png";
+import squadraImage from "../../imports/squadra-three-devices.png";
+import checklistsImage from "../../imports/Checklist-EN.png";
 import swapsImage from "../../imports/squadra-swaps-preview-v2.png";
 import caveoImage from "../../imports/3.png";
 import nvoyeImage from "../../imports/nvoye-preview-v2.png";
@@ -453,7 +453,7 @@ export default function Home() {
       number: "07",
       year: "2023",
       title: "Foster the Family",
-      role: "Web Designer",
+      role: "UX/UI Designer & UX Writer",
       company: "Independent",
       description: "Website redesign for foster care organization",
       tags: ["Web Design", "Information Architecture"]

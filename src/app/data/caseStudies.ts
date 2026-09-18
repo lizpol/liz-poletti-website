@@ -1,6 +1,6 @@
 import type { StudyContent } from "../components/CaseStudyLayout";
 import { projects } from "./projects";
-import checklistHero from "../../imports/Tablet.png";
+import checklistHero from "../../imports/Checklist-EN.png";
 import checklistTemplate from "../../imports/Checklist-template.png";
 import newShift from "../../imports/New-shift.png";
 import mobileTasks from "../../imports/Mobile-tasks.png";
@@ -25,7 +25,13 @@ import eventsDesktop from "../../imports/Events_explorer.png";
 import eventMobile from "../../imports/event-mobile.png";
 import messagesDesktop from "../../imports/Messages.png";
 import messagesTablet from "../../imports/Messages-1.png";
-import fosterHero from "../../imports/foster-preview-v2.png";
+import fosterHero from "../../imports/foster/home-hero.jpg";
+import fosterHomeSupport from "../../imports/foster/home-support.jpg";
+import fosterBefore from "../../imports/foster/get-help-before.png";
+import fosterHelp from "../../imports/foster/get-help.jpg";
+import fosterNav from "../../imports/foster/get-help-nav.jpg";
+import fosterDonate from "../../imports/foster/donate.jpg";
+import fosterGiving from "../../imports/foster/donate-giving.jpg";
 
 const squadraParent = { label: "Squadra", href: "/work/squadra" };
 const squadraMeta = [
@@ -48,52 +54,36 @@ export const checklistStudy: StudyContent = {
   title: "A clear plan for every shift.",
   lead: "Bringing instructions, daily tasks and completion records into the tools teams already use.",
   parent: squadraParent,
-  hero: { src: checklistHero, alt: "Squadra checklists on a shared workplace tablet" },
+  hero: { src: checklistHero, alt: "Squadra checklist for a gardening shift, showing task progress and completion" },
   meta: [...squadraMeta, { label: "Platforms", value: "Desktop, tablet & mobile" }],
   context: {
     title: "Connecting the schedule to the work",
     paragraphs: [
-      "Squadra helps restaurants, clinics and hospitality businesses manage their workforce. Teams could see when they were working, but instructions still lived in messages, paper notes and verbal handovers.",
+      "Squadra connects managers and employees in businesses that work in shifts. Teams could see when they were working, but instructions still lived in messages, paper notes and verbal handovers.",
       "I owned Checklists from research and framing through UX, UI and handoff. Conversations with managers pointed to a simple need: attach tasks to the shift itself, give workers the right context and make completion visible without constant check-ins.",
     ],
   },
   sections: [
     {
       id: "templates", label: "01 · Build", title: "Write the routine once",
-      challenge: "How could daily routines stay consistent when instructions were scattered across messages, notes and handovers?",
-      paragraphs: [
-        "I designed reusable templates so managers could set up an opening routine once and use it across shifts. Each task can include instructions, photos and files, keeping the detail close to the action.",
-        "Reusing a shared template gives teams a consistent starting point, whoever happens to be working that day.",
-      ],
+      paragraphs: ["Instructions were scattered across messages and handovers. I brought them into reusable checklist templates, with descriptions, photos and files attached to each task, so managers could define a routine once and give every shift the same starting point."],
       images: [{ src: checklistTemplate, alt: "Checklist template editor with task descriptions and attachments" }],
     },
     {
       id: "assignment", label: "02 · Assign", title: "Make tasks part of planning",
-      challenge: "How could assigning tasks fit into a manager’s existing planning routine?",
-      paragraphs: [
-        "I placed checklist assignment inside shift creation. Managers can add several templates together, so opening tasks, closing routines and maintenance are organised before the shift begins.",
-        "This keeps scheduling and task setup in one flow, with no separate assignment step to remember later.",
-      ],
+      paragraphs: ["A separate task tool would add another step to a busy planning routine. I placed checklist selection inside shift creation, letting managers assign opening, closing and maintenance routines while they schedule the work."],
       layout: "compact",
       images: [{ src: newShift, alt: "Shift creation form with the option to add checklists" }],
     },
     {
       id: "completion", label: "03 · Complete", title: "Keep guidance close at hand",
-      challenge: "How could workers follow instructions and record completion without slowing down their shift?",
-      paragraphs: [
-        "Workers see their tasks, instructions and progress on the devices they use during a shift. I kept the path from reading a task to marking it complete short and direct.",
-        "Notes and photos add context to a completed task, leaving a useful record of what happened instead of just a tick.",
-      ],
+      paragraphs: ["Workers needed guidance they could use mid-shift. I kept instructions, progress and completion together on their existing devices, with optional notes and photos to record what happened without turning every task into an admin exercise."],
       layout: "compact",
       images: [{ src: mobileTasks, alt: "Mobile task list and task details with completion controls" }],
     },
     {
       id: "review", label: "04 · Review", title: "Oversight without interruption",
-      challenge: "How could managers see what happened without checking every task in person?",
-      paragraphs: [
-        "I designed the review view around the questions managers need answered: what was completed, by whom and when? Notes and photos sit beside the relevant task, with incomplete work clearly flagged.",
-        "Managers can leave a comment in context and review submissions after the shift, giving teams a shared record without interrupting the work.",
-      ],
+      paragraphs: ["Managers needed visibility without constant check-ins. I organised review around what was done, by whom and when, with incomplete tasks flagged and notes beside the relevant task. Comments keep follow-up in context after the shift."],
       images: [{ src: checklistReview, alt: "Manager review showing task completion, notes and attached evidence" }],
     },
   ],
@@ -119,40 +109,24 @@ export const swapsStudy: StudyContent = {
   sections: [
     {
       id: "rules", label: "01 · Configure", title: "Set the rules upfront",
-      challenge: "How could managers keep control of eligibility without repeating the same checks for every request?",
-      paragraphs: [
-        "I moved recurring eligibility decisions into a single setup flow. Managers choose which job titles or skills qualify, how much notice is needed and when unresolved requests should be declined.",
-        "These rules guide subsequent requests, reducing the need to repeat the same checks for every swap.",
-      ],
+      paragraphs: ["Manually checking every replacement repeated the same work. I moved eligibility, notice periods and deadlines into an upfront setup, so each request could follow the manager’s rules without starting the checks again."],
       images: [{ src: swapRules, alt: "Shift swap settings for eligibility, notice periods and deadlines" }],
     },
     {
       id: "offer", label: "02 · Offer", title: "Start with the shift",
-      challenge: "How could workers find cover independently and know where their request stood?",
-      paragraphs: [
-        "On mobile, workers select the shift they need covered and add a message. The offer appears in the shift marketplace for eligible colleagues.",
-        "I made request status visible in the offer list, so workers can follow a swap through review, approval or rejection without chasing a reply.",
-      ],
+      paragraphs: ["Workers needed to find cover without chasing messages. I started the offer flow from their shift, added a short message and made its review status visible, keeping both the request and its progress in one place."],
       layout: "compact",
       images: [{ src: offer, alt: "Mobile screens for creating a swap offer and following its status" }],
     },
     {
       id: "apply", label: "03 · Apply", title: "Show relevant opportunities",
-      challenge: "How could workers tell which shifts suited them before applying?",
-      paragraphs: [
-        "The marketplace filters offers using the manager’s rules, helping workers find shifts that match their role and skills. Qualification badges explain the requirements alongside each offer.",
-        "I focused the application flow on making it clear what someone is volunteering for before they apply.",
-      ],
+      paragraphs: ["A marketplace is only useful if the offers are relevant. I used eligibility filtering and visible qualification badges to help workers understand which shifts suited them and what they were applying for."],
       layout: "compact",
       images: [{ src: application, alt: "Shift marketplace showing eligibility details and an application flow" }],
     },
     {
       id: "assignment", label: "04 · Assign", title: "Give managers the full picture",
-      challenge: "How could approval account for workload and eligibility while keeping the schedule accurate?",
-      paragraphs: [
-        "The review screen brings the current assignee and applicants together, with workload, target hours and rest days available for comparison. Any eligibility mismatch is flagged so managers can understand it in context.",
-        "Assigning a replacement updates the schedule as part of the same action, closing the gap between agreeing a swap and recording it.",
-      ],
+      paragraphs: ["Approval needed more than a name. I brought applicants, workload and eligibility flags into one review view, then connected assignment to the schedule update so agreeing a swap and recording it became one action."],
       images: [{ src: swapReview, alt: "Manager comparison of swap applicants, workload and eligibility flags" }],
     },
   ],
@@ -182,11 +156,7 @@ export const caveoStudy: StudyContent = {
   sections: [
     {
       id: "structure", label: "01 · Structure", title: "Start with life’s financial topics",
-      challenge: "How could an insurance-led app make its broader financial planning offer understandable?",
-      paragraphs: [
-        "I organised the plan around topics such as taxes, pensions, assets and inheritance. Each hexagon represents an area with its own assessment, tasks and status, making the breadth of the product visible from the start.",
-        "This replaced an insurance-led starting point with a structure people could use to explore their wider financial situation.",
-      ],
+      paragraphs: ["An insurance-led starting point hid Caveo’s wider offering. I organised the plan around familiar topics such as taxes, pensions and inheritance, giving each its own assessment, tasks and status within a reusable hexagon grid."],
       images: [
         { src: oldCaveo, alt: "Original Caveo insurance home screen", caption: "Before · Insurance home", },
         { src: planStart, alt: "Redesigned financial plan with hexagonal topic navigation", caption: "After · Topic-based financial plan" },
@@ -195,11 +165,7 @@ export const caveoStudy: StudyContent = {
     },
     {
       id: "progress", label: "02 · Progress", title: "Make the next step visible",
-      challenge: "How could a complex plan feel manageable while making progress and next steps clear?",
-      paragraphs: [
-        "I gave each topic a visible state so users could distinguish what was untouched, in preparation or complete. The plan gradually fills with colour as they work through it.",
-        "The main action also changes from starting the financial check to checking the next topic, keeping the next step clear without asking users to finish everything at once.",
-      ],
+      paragraphs: ["A whole financial plan could feel like too much at once. I made topic states visible and changed the main action as users progressed, helping them see what was done and focus on the next manageable step."],
       layout: "phones",
       images: [
         { src: planStart, alt: "Financial plan before assessments begin", caption: "Start the financial check" },
@@ -209,11 +175,7 @@ export const caveoStudy: StudyContent = {
     },
     {
       id: "guidance", label: "03 · Guidance", title: "Connect planning to a conversation",
-      challenge: "How could the digital plan connect naturally to expert advice and ongoing reviews?",
-      paragraphs: [
-        "I brought appointments and review prompts into the plan itself. Once topics have been assessed, users can see the next consultation and the areas that still need attention.",
-        "Yearly reviews give the plan a reason to evolve as circumstances change, connecting the digital experience to Caveo’s expert support.",
-      ],
+      paragraphs: ["The plan needed to lead somewhere beyond completing a questionnaire. I brought appointments and review prompts into the experience, connecting digital progress to expert conversations and giving the plan a reason to evolve over time."],
       layout: "phones",
       images: [
         { src: appointment, alt: "Caveo plan with the next expert appointment", caption: "Next appointment" },
@@ -223,11 +185,7 @@ export const caveoStudy: StudyContent = {
     },
     {
       id: "system", label: "04 · Design system", title: "Leave room for the plan to grow",
-      challenge: "How could the product accommodate new topics while keeping the experience familiar?",
-      paragraphs: [
-        "Each topic combines a short self-assessment with practical tasks, so users can work on one area and return to another later. I carried the same visual language across topic states, task lists and planning views.",
-        "The reusable hexagon system also leaves room for new financial topics without changing the underlying navigation.",
-      ],
+      paragraphs: ["New topics needed to fit without making the app harder to learn. I carried the same visual language across assessments, tasks and progress states, so the product could grow around a familiar structure."],
     },
   ],
   outcome: "A redesigned mobile experience covering topic-based planning, assessments, progress states and expert guidance, supported by a reusable visual system. The work reframed Caveo’s broader offering as a financial plan people could build and revisit over time.",
@@ -251,17 +209,13 @@ export const nvoyeStudy: StudyContent = {
     title: "A professional space for diplomats",
     paragraphs: [
       "Nvoye is a private platform for the diplomatic community. Members need to find relevant people and opportunities while understanding who can see their activity and the spaces they join.",
-      "As a Product Designer, I worked with three other designers, two founders and five developers. Together, we shaped profiles, connections, events, groups and messaging around professional context and clear privacy cues. I also helped shape the UX writing, making the language clear and appropriate for the diplomatic community.",
+      "As a Product Designer, I worked with three other designers, two founders, two marketing experts and five developers. Together, we shaped profiles, connections, events, groups and messaging around professional context and clear privacy cues. I also helped shape the UX writing, making the language clear and appropriate for the diplomatic community.",
     ],
   },
   sections: [
     {
       id: "connections", label: "01 · Connections", title: "Put professional context first",
-      challenge: "How could members judge a connection’s relevance while keeping professional context at the centre?",
-      paragraphs: [
-        "We anchored profiles in a person’s role, embassy and posting, with mutual connections providing useful context. The network is organised into existing connections, requests and exploration.",
-        "This gives members a clear way to manage their professional circle. On mobile, network activity keeps them informed about the people they have chosen to connect with.",
-      ],
+      paragraphs: ["Members needed to judge professional relevance. We centred profiles on role, embassy, posting and mutual connections, and separated existing contacts, requests and discovery to make the network easier to navigate."],
       layout: "devices",
       images: [
         { src: connectionsDesktop, alt: "Nvoye desktop connections view with professional profiles" },
@@ -270,11 +224,7 @@ export const nvoyeStudy: StudyContent = {
     },
     {
       id: "events", label: "02 · Events", title: "Make discovery purposeful",
-      challenge: "How could members find relevant events and understand their visibility before taking part?",
-      paragraphs: [
-        "We organised events around themes such as diplomacy, culture and languages. Visibility and format are shown upfront, helping members understand whether an event is public or private, online or in person.",
-        "Event details bring the occasion and practical information together, from formal ceremonies to smaller community exchanges.",
-      ],
+      paragraphs: ["Event discovery needed both relevance and discretion. We grouped opportunities by theme and showed visibility and format upfront, helping members understand the occasion before choosing to take part."],
       layout: "devices",
       images: [
         { src: eventsDesktop, alt: "Nvoye event explorer organised by theme" },
@@ -283,11 +233,7 @@ export const nvoyeStudy: StudyContent = {
     },
     {
       id: "groups", label: "03 · Groups", title: "Explain the space before joining",
-      challenge: "How could members understand a group’s purpose, rules and privacy before joining?",
-      paragraphs: [
-        "Group pages lead with their purpose, then introduce conversations and events. We made rules, visibility and the people running the group easy to find so members can understand the space before participating.",
-        "The same priorities carry through to mobile, keeping a group’s identity and expectations close to its everyday activity.",
-      ],
+      paragraphs: ["Joining a group means understanding its boundaries. We put its purpose, rules, visibility and administrators close to the conversation, making expectations clear across desktop and mobile."],
       layout: "devices",
       images: [
         { src: groupsDesktop, alt: "Nvoye desktop group page with purpose, privacy and administrator information" },
@@ -296,11 +242,7 @@ export const nvoyeStudy: StudyContent = {
     },
     {
       id: "messages", label: "04 · Messages", title: "Keep conversations easy to navigate",
-      challenge: "How could conversations stay easy to recognise and navigate in a professional community?",
-      paragraphs: [
-        "We designed messaging around recognisable people and professional relationships. Names and titles give conversations context, while a clear overview, search and filters help members find the thread they need.",
-        "The experience extends across desktop and tablet, supporting both individual messages and group conversations within the same visual language.",
-      ],
+      paragraphs: ["Conversations needed to stay recognisable in a professional setting. We used names and titles for context, with a clear overview, search and filters to help members find the right thread across desktop and tablet."],
       images: [{ src: messagesDesktop, alt: "Nvoye desktop messaging overview with contacts and conversations" }],
     },
   ],
@@ -311,49 +253,60 @@ export const nvoyeStudy: StudyContent = {
 
 export const fosterStudy: StudyContent = {
   name: "Foster the Family",
-  category: "Website design",
+  category: "UX/UI design & UX writing",
   title: "A clearer path to support.",
-  lead: "Helping families find what they need, while making it easier for others to contribute.",
-  hero: { src: fosterHero, alt: "Foster the Family website project" },
+  lead: "A focused redesign of key pages, using language, navigation and design to help families find support and others get involved.",
+  hero: { src: fosterHero, alt: "Foster the Family live homepage with clear Get Help and Donate actions" },
   meta: [
-    { label: "Role", value: projects.foster.role },
+    { label: "Role", value: "UX/UI Designer & UX Writer" },
     { label: "Team", value: "Independent designer with organisation stakeholders" },
-    { label: "Timeline", value: projects.foster.timeline },
-    { label: "Platform", value: "Responsive website" },
+    { label: "Engagement", value: "Short-term, focused redesign" },
+    { label: "Scope", value: "Homepage, Get Help & Donate" },
   ],
   context: {
-    title: "One organisation, different needs",
+    title: "A small brief with room to do more",
     paragraphs: [
-      "Foster the Family is a nonprofit supporting families in the foster care system. Its website needs to help families seeking support while also serving donors, volunteers and partners.",
-      "I worked independently with the organisation’s stakeholders to redesign the site’s structure, content and visual system. The priority was to make essential information easy to find, especially for families already under stress.",
+      "Foster the Family supports foster, adoptive and kinship families. I was hired for a quick redesign of a few key pages, but much of the opportunity was in the language and how information was organised.",
+      "Alongside the UI, I worked extensively on UX writing, navigation and page structure: making the support easier to understand and the invitation to help easier to act on.",
     ],
   },
   sections: [
     {
-      id: "structure", label: "01 · Structure", title: "Organise around the visitor’s needs",
-      challenge: "How could one website serve families seeking help, donors and volunteers without overwhelming them?",
-      paragraphs: [
-        "I restructured the information architecture around the different reasons people arrive at the site. Families seeking help, potential volunteers and donors each needed a clear starting point.",
-        "The new structure gives those audiences distinct paths while keeping them connected to the organisation’s wider work.",
+      id: "navigation", label: "01 · Navigation", title: "Start with what people came to do",
+      paragraphs: ["The original navigation asked visitors to explore the organisation through About Us and Where We Serve. I helped make the main routes more direct: Get Help for families and Get Involved for supporters, with local offices still easy to find."],
+      layout: "stacked",
+      images: [
+        { src: fosterBefore, alt: "Original navigation: About Us, Where We Serve, Blog, Contact Us and Give Now", caption: "Before · Navigation organised around the organisation", preview: "navigation" },
+        { src: fosterNav, alt: "Current navigation with Get Help and Get Involved alongside local offices", caption: "After · Clear routes for families and supporters" },
       ],
     },
     {
-      id: "content", label: "02 · Content", title: "Make the next action clear",
-      challenge: "How could the site communicate its mission while making practical next steps easy to find?",
-      paragraphs: [
-        "I prioritised practical information and clear routes to getting help, donating and volunteering. The content needed to communicate the organisation’s mission while helping visitors understand what to do next.",
-        "This balance shaped the page hierarchy: a welcoming introduction, the information relevant to that audience and a visible way to act.",
+      id: "get-help", label: "02 · Get Help", title: "Make the support easier to understand",
+      paragraphs: ["The original page combined a location search with a dense description of services. I worked on clearer language and a more readable hierarchy, distinguishing local offices from support groups and giving the different kinds of help their own space."],
+      layout: "comparison",
+      images: [
+        { src: fosterBefore, alt: "Original I Need Help page with location map and a compact list of support services", caption: "Before · Original page supplied from the project" },
+        { src: fosterHelp, alt: "Redesigned Get Help page with separate routes to local offices and support groups, followed by service descriptions", caption: "After · Current live page, opening sections" },
       ],
+      link: { href: "https://www.fosterthefamily.org/get-help", label: "View the live Get Help page" },
     },
     {
-      id: "visual-system", label: "03 · Visual system", title: "Keep the experience approachable",
-      challenge: "How could the experience feel welcoming and credible, and stay consistent as the site grew?",
-      paragraphs: [
-        "I developed a visual system that balances warmth with credibility and carries consistently across the site. Reusable patterns provide a foundation for the organisation’s content to grow.",
-        "Responsive layouts keep key information and actions accessible on smaller screens, so visitors can follow the same paths on their phones.",
+      id: "homepage", label: "03 · Homepage", title: "Connect the mission to the next step",
+      paragraphs: ["The homepage needed to welcome both families and people ready to help. I worked on the writing, hierarchy and layout to connect the mission with practical support, keeping Get Help and Donate prominent and making the programmes easier to explore."],
+      images: [{ src: fosterHomeSupport, alt: "Live homepage section explaining how Foster the Family helps, with programme tabs and descriptions", caption: "Homepage · Making the organisation’s support more tangible" }],
+      link: { href: "https://www.fosterthefamily.org/", label: "View the live homepage" },
+    },
+    {
+      id: "donate", label: "04 · Donate", title: "Give the invitation to help meaning",
+      paragraphs: ["I redesigned the donation page and helped shape its language around the families a gift supports. The page connects that invitation to practical giving options, explaining ongoing support through the monthly programme alongside one-time donations."],
+      images: [
+        { src: fosterDonate, alt: "Live donation page opening, connecting giving to support for children and families", caption: "An invitation grounded in the mission" },
+        { src: fosterGiving, alt: "Donation page explaining monthly giving levels and the support each contributes towards", caption: "Making ongoing support concrete" },
       ],
+      link: { href: "https://www.fosterthefamily.org/donate", label: "View the live Donate page" },
     },
   ],
-  outcome: "A restructured website with clear routes to support, donations and volunteering, backed by a responsive visual system. The design brings the organisation’s different audiences together while giving each a more focused path through the content.",
+  outcomeTitle: "A focused contribution",
+  outcome: "This was a short engagement on selected pages, with limited involvement in the wider site. I left a clearer structure, more purposeful language and designs that better connected the mission to getting support and giving it. The screenshots show the current live pages, which may have evolved since my work.",
   related: [related.nvoye, related.squadra],
 };
