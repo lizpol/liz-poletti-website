@@ -189,7 +189,7 @@ export const caveoStudy: StudyContent = {
     },
   ],
   outcome: "A redesigned mobile experience covering topic-based planning, assessments, progress states and expert guidance, supported by a reusable visual system. The work reframed Caveo’s broader offering as a financial plan people could build and revisit over time.",
-  pdf: { href: "/case-studies/caveo-case-study-sample.pdf", label: "Download the case study PDF" },
+  pdf: { href: `${import.meta.env.BASE_URL}case-studies/caveo-case-study-sample.pdf`, label: "Download the case study PDF" },
   related: [related.squadra, related.nvoye],
 };
 
