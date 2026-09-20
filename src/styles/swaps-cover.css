@@ -8,15 +8,15 @@
   .swaps-cover-phone img { border-radius: 4.8cqh; }
   .swaps-candidate { width: min(39cqw, 65cqh); }
 }
+.swaps-cover::before { content: ''; position: absolute; width: 75%; aspect-ratio: 1; left: 12.5%; top: 50%; transform: translateY(-50%); border-radius: 50%; border: 1px solid #ffffff45; background: #ffffff10; }
+.swaps-cover-art { position: absolute; inset: 0; transition: transform 500ms ease; }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .project-link:hover .swaps-cover-phone { transform: translate(-50%, -2%) rotate(-2deg); }
-  .project-link:hover .swaps-candidate-good { transform: translate(3%, -5%) rotate(0deg); }
+  .project-link:hover .swaps-cover-art { transform: scale(1.03); }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .project-link:focus-visible .swaps-cover-phone { transform: translate(-50%, -2%) rotate(-2deg); }
-  .project-link:focus-visible .swaps-candidate-good { transform: translate(3%, -5%) rotate(0deg); }
+  .project-link:focus-visible .swaps-cover-art { transform: scale(1.03); }
 }
-@media (prefers-reduced-motion: reduce) { .swaps-cover-phone, .swaps-candidate { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .swaps-cover-art, .swaps-cover-phone, .swaps-candidate { transition: none; } }
 .swaps-study { display: grid; grid-template-columns: minmax(0, 280px) minmax(0, 360px); justify-content: center; align-items: center; gap: clamp(24px, 5vw, 64px); padding: clamp(20px, 4vw, 48px); background: #f3f0fa; border-radius: 16px; }
 .swaps-study-phone { display: block; border: 7px solid #19191d; border-radius: 30px; overflow: hidden; box-shadow: 0 12px 24px #201e5015; }
 .swaps-study img { width: 100%; height: auto; }

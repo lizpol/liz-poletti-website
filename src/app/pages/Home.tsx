@@ -11,7 +11,7 @@ import ChecklistCover from "../components/ChecklistCover";
 import SwapsCover from "../components/SwapsCover";
 import caveoImage from "../../imports/3.png";
 import NvoyeCover from "../components/NvoyeCover";
-import fosterImage from "../../imports/foster-preview-v2.png";
+import FosterCover from "../components/FosterCover";
 
 interface ProjectCardProps {
   number: string;
@@ -53,7 +53,7 @@ const cardConfig: Record<string, { img: string; bg: string; fit: string; parent?
     fit: "object-contain",
   },
   foster: {
-    img: fosterImage,
+    img: "",
     bg: "bg-[#f3e9dd]",
     fit: "object-contain",
   },
@@ -75,7 +75,7 @@ function ProjectCard({ year, title, description, tags, id }: ProjectCardProps) {
 
           {/* Image area — fixed height */}
           <div className={`project-image flex-shrink-0 overflow-hidden ${config.bg}`}>
-            {id === "squadra-checklists" ? <ChecklistCover /> : id === "squadra-swaps" ? <SwapsCover /> : id === "nvoye" ? <NvoyeCover /> : config.img ? (
+            {id === "squadra-checklists" ? <ChecklistCover /> : id === "squadra-swaps" ? <SwapsCover /> : id === "nvoye" ? <NvoyeCover /> : id === "foster" ? <FosterCover /> : config.img ? (
               <img
                 src={config.img}
                 alt={title}

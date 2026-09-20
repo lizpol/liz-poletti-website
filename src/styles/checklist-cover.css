@@ -63,24 +63,15 @@
   .checklist-phone-task { margin-left: -4cqh; }
   .checklist-phone-screen { border-radius: 4.8cqh; }
 }
+ .checklist-phones { transition: transform 500ms ease; }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .project-link:hover .checklist-phone-overview,
-  .checklist-cover-large:hover .checklist-phone-overview {
-    transform: translate(-6%, -5%) rotate(-20deg) rotateY(4deg);
-    box-shadow: 2px 3px 0 #08080a, 12px 23px 28px #30214d45;
-  }
-  .project-link:hover .checklist-phone-task,
-  .checklist-cover-large:hover .checklist-phone-task {
-    transform: translate(10%, -2%) rotate(16deg) rotateY(-4deg);
-    box-shadow: 2px 3px 0 #08080a, 12px 23px 28px #30214d45;
-  }
+  .project-link:hover .checklist-phones { transform: scale(1.03); }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .project-link:focus-visible .checklist-phone-overview { transform: translate(-6%, -5%) rotate(-20deg) rotateY(4deg); }
-  .project-link:focus-visible .checklist-phone-task { transform: translate(10%, -2%) rotate(16deg) rotateY(-4deg); }
+  .project-link:focus-visible .checklist-phones { transform: scale(1.03); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .checklist-phone { transition: none; }
+  .checklist-phones, .checklist-phone { transition: none; }
 }
 
 .checklist-study { display: grid; grid-template-columns: repeat(2, minmax(0, 280px)); justify-content: center; gap: clamp(20px, 5vw, 64px); padding: clamp(20px, 4vw, 48px); background: #f3f0fa; border-radius: 16px; }
