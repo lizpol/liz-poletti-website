@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import Navigation from "../components/Navigation";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, ChevronDown, CheckCircle2, Mail, Copy } from "lucide-react";
+import { ChevronDown, CheckCircle2, Mail, Copy } from "lucide-react";
 
 import { useState, useRef, useEffect } from "react";
 import HomeHero from "../components/HomeHero";
@@ -173,51 +173,13 @@ function CapabilityAccordionItem({ title, description, items, isOpen, onClick }:
 
 export default function Home() {
   const [openCapability, setOpenCapability] = useState(0);
-  const [showEmailPopover, setShowEmailPopover] = useState(false);
   const [showFooterEmailPopover, setShowFooterEmailPopover] = useState(false);
-  const [copySuccess, setCopySuccess] = useState(false);
   const [footerCopySuccess, setFooterCopySuccess] = useState(false);
-  const emailButtonRef = useRef<HTMLButtonElement>(null);
-  const popoverRef = useRef<HTMLDivElement>(null);
   const footerEmailButtonRef = useRef<HTMLButtonElement>(null);
   const footerPopoverRef = useRef<HTMLDivElement>(null);
 
   const handleCapabilityClick = (index: number) => {
     setOpenCapability(openCapability === index ? -1 : index);
-  };
-
-  const handleCopyEmail = async () => {
-    const email = "polettilaiza@gmail.com";
-    
-    // Use fallback method by default since clipboard API may be blocked
-    try {
-      const textArea = document.createElement("textarea");
-      textArea.value = email;
-      textArea.style.position = "fixed";
-      textArea.style.left = "-999999px";
-      textArea.style.top = "-999999px";
-      document.body.appendChild(textArea);
-      textArea.focus();
-      textArea.select();
-      
-      const successful = document.execCommand('copy');
-      textArea.remove();
-      
-      if (successful) {
-        setCopySuccess(true);
-        setTimeout(() => {
-          setCopySuccess(false);
-          setShowEmailPopover(false);
-        }, 1500);
-      }
-    } catch (err) {
-      console.error("Failed to copy email:", err);
-    }
-  };
-
-  const handleOpenEmail = () => {
-    window.location.href = "mailto:polettilaiza@gmail.com";
-    setShowEmailPopover(false);
   };
 
   const handleCopyFooterEmail = async () => {
@@ -253,28 +215,6 @@ export default function Home() {
     window.location.href = "mailto:polettilaiza@gmail.com";
     setShowFooterEmailPopover(false);
   };
-
-  // Close popover when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        popoverRef.current &&
-        !popoverRef.current.contains(event.target as Node) &&
-        emailButtonRef.current &&
-        !emailButtonRef.current.contains(event.target as Node)
-      ) {
-        setShowEmailPopover(false);
-      }
-    };
-
-    if (showEmailPopover) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [showEmailPopover]);
 
   // Close footer popover when clicking outside
   useEffect(() => {
@@ -483,8 +423,10 @@ export default function Home() {
             <div className="relative">
               <button
                 ref={footerEmailButtonRef}
-                onMouseEnter={() => setShowFooterEmailPopover(true)}
-                onMouseLeave={() => setShowFooterEmailPopover(false)}
+                aria-expanded={showFooterEmailPopover}
+                aria-controls="footer-email-options"
+                onClick={() => setShowFooterEmailPopover(value => !value)}
+                onKeyDown={event => { if (event.key === "Escape") setShowFooterEmailPopover(false); }}
                 className="text-blue-800 hover:text-blue-900 text-sm transition-colors"
               >
                 polettilaiza@gmail.com
@@ -495,8 +437,8 @@ export default function Home() {
                 {showFooterEmailPopover && (
                   <motion.div
                     ref={footerPopoverRef}
-                    onMouseEnter={() => setShowFooterEmailPopover(true)}
-                    onMouseLeave={() => setShowFooterEmailPopover(false)}
+                    id="footer-email-options"
+                    onKeyDown={event => { if (event.key === "Escape") { setShowFooterEmailPopover(false); footerEmailButtonRef.current?.focus(); } }}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}

@@ -11,12 +11,15 @@ export default function ScrollToTop() {
     }
 
     if (hash) {
-      setTimeout(() => {
-        const element = document.querySelector(hash);
+      const timeout = window.setTimeout(() => {
+        let id = hash.slice(1);
+        try { id = decodeURIComponent(id); } catch { /* Treat malformed encoding as a literal ID. */ }
+        const element = document.getElementById(id);
         if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
+          element.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
         }
       }, 50);
+      return () => window.clearTimeout(timeout);
     } else {
       window.scrollTo({ top: 0, behavior: "instant" });
     }

@@ -28,7 +28,7 @@
 .about-main { max-width: 1170px; margin: 0 auto; padding: 166px 24px 0; }
 .about-heading { margin-bottom: 72px; }
 .about-heading > p { max-width: 540px; }
-.about-portrait { width: 240px; height: 280px; object-fit: cover; object-position: center 25%; border-radius: 120px 120px 12px 12px; margin: 36px auto 16px; }
+.about-portrait { width: 260px; max-width: 100%; height: 340px; object-fit: cover; object-position: center top; border-radius: 130px 130px 12px 12px; margin: 36px auto 16px; }
 .about-location { color: #626b83; font-size: 10px; letter-spacing: .1em; }
 .about-story { max-width: 640px; margin: 0 auto; }
 .about-story h2 { font-size: clamp(30px, 3.4vw, 42px); margin-bottom: 28px; }

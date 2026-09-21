@@ -11,7 +11,8 @@ export default function Navigation() {
       setIsScrolled(window.scrollY > 50);
     };
     
-    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
@@ -23,7 +24,7 @@ export default function Navigation() {
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
       {/* Expanded top bar — visible at the top */}
       <div className={`w-full px-6 md:px-12 transition-all duration-500 pointer-events-auto ${
-        isScrolled ? 'opacity-0 -translate-y-full pointer-events-none' : 'opacity-100 translate-y-0'
+        isScrolled ? 'invisible opacity-0 -translate-y-full pointer-events-none' : 'opacity-100 translate-y-0'
       }`}>
         <div className="max-w-7xl mx-auto flex justify-between items-center py-6 md:py-8">
           <Link to="/" className="flex items-center hover:opacity-80 transition-opacity">
@@ -48,7 +49,7 @@ export default function Navigation() {
 
       {/* Floating pill — appears on scroll */}
       <div className={`absolute top-4 pointer-events-auto transition-all duration-500 ${
-        isScrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'
+        isScrolled ? 'opacity-100 translate-y-0' : 'invisible opacity-0 -translate-y-4 pointer-events-none'
       }`}>
         <div className="flex items-center gap-1 px-2 py-2 bg-white/85 backdrop-blur-xl border border-slate-200/80 rounded-full shadow-lg shadow-slate-900/10">
           <Link
