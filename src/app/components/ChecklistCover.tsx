@@ -1,6 +1,7 @@
-import overview from "../../imports/checklist-overview-screen.png";
-import task from "../../imports/checklist-task-screen.png";
+import overview from "../../imports/checklist-list-original.png";
+import task from "../../imports/checklist-task-original.png";
 import "../../styles/checklist-cover.css";
+import "../../styles/device-frames.css";
 
 export default function ChecklistCover({ large = false }: { large?: boolean }) {
   if (large) return (
@@ -16,7 +17,7 @@ export default function ChecklistCover({ large = false }: { large?: boolean }) {
     </div>
   );
   return (
-    <div className={`checklist-cover${large ? " checklist-cover-large" : ""}`} role="img" aria-label="Squadra mobile checklists: task progress and task details shown in two black phone frames">
+    <div className={`checklist-cover${large ? " checklist-cover-large" : ""}`} role="img" aria-label="Squadra mobile checklists: task progress and task details shown in two silver phone frames">
       <div className="checklist-phones" aria-hidden="true">
         <div className="checklist-phone checklist-phone-overview">
           <div className="checklist-phone-screen checklist-overview-screen">

@@ -78,8 +78,8 @@ export default function HomeHero() {
       </motion.div>
 
       <div className="hero-bottom">
-        <span>6+ years of experience <span className="hero-dot">·</span> 20+ products designed</span>
-        <span>Thoughtful. Useful. Human.</span>
+        <span>From academia to product design <span className="hero-dot">·</span> 6+ years in UX</span>
+        <span>Clarity. Language. Logic.</span>
       </div>
     </section>
   );

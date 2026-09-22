@@ -1,7 +1,8 @@
-import marketplace from "../../imports/swaps-marketplace.png";
+import marketplace from "../../imports/swaps-marketplace-original.png";
 import goodCandidate from "../../imports/swaps-good-candidate.png";
 import badCandidate from "../../imports/swaps-bad-candidate.png";
 import "../../styles/swaps-cover.css";
+import "../../styles/device-frames.css";
 
 export default function SwapsCover({ study = false }: { study?: boolean }) {
   if (study) return (
@@ -24,7 +25,7 @@ export default function SwapsCover({ study = false }: { study?: boolean }) {
   );
 
   return (
-    <div className="swaps-cover" role="img" aria-label="Shift marketplace in a black phone frame, with a matching candidate and their required skills">
+    <div className="swaps-cover" role="img" aria-label="Shift marketplace in a silver phone frame, with a matching candidate and their required skills">
       <div className="swaps-cover-art">
       <div className="swaps-cover-phone" aria-hidden="true"><img src={marketplace} alt="" loading="lazy" /></div>
       <img className="swaps-candidate swaps-candidate-good" src={goodCandidate} alt="" aria-hidden="true" loading="lazy" />

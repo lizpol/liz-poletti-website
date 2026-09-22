@@ -2,7 +2,7 @@ import { useLayoutEffect } from "react";
 import { useLocation } from "react-router";
 
 export default function ScrollToTop() {
-  const { pathname, hash } = useLocation();
+  const { pathname, hash, key } = useLocation();
 
   useLayoutEffect(() => {
     // Take full control — prevent browser from restoring previous scroll position
@@ -23,7 +23,7 @@ export default function ScrollToTop() {
     } else {
       window.scrollTo({ top: 0, behavior: "instant" });
     }
-  }, [pathname, hash]);
+  }, [pathname, hash, key]);
 
   return null;
 }

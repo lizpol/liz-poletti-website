@@ -2,6 +2,7 @@ import { CalendarDays, Compass, Home, MessageCircle, Users } from "lucide-react"
 import brandHeader from "../../imports/nvoye-brand-header.png";
 import dashboardScreen from "../../imports/nvoye-dashboard-cover.png";
 import "../../styles/nvoye-cover.css";
+import "../../styles/device-frames.css";
 
 const events = [
   { title: "Potluck in the Park", category: "Meet your community", date: "04 MAY", position: "23% 31%" },
@@ -12,7 +13,7 @@ const events = [
 // Editorial dashboard preview built from the existing community content.
 export default function NvoyeCover() {
   return (
-    <div className="nvoye-cover" role="img" aria-label="Nvoye dashboard concept showing community events and member connections in a black desktop display">
+    <div className="nvoye-cover" role="img" aria-label="Nvoye dashboard concept showing community events and member connections in a silver desktop display">
       <div className="nvoye-device" aria-hidden="true">
         <div className="nvoye-device-screen">
           <div className="nvoye-dashboard">

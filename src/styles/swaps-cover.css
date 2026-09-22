@@ -1,8 +1,8 @@
 .swaps-cover { position: relative; height: 100%; width: 100%; overflow: hidden; container-type: size; background: radial-gradient(ellipse at 45% 40%, #faf8ff, #e7dffd 70%, #dacdf2); }
-.swaps-cover-phone { position: absolute; height: 82%; aspect-ratio: .47; top: 9%; left: 39%; padding: 4px; border: 1px solid #66616e; border-radius: 20px; background: #19191d; box-shadow: 2px 3px 0 #08080a, 6px 16px 24px #30214d28; transform: translateX(-50%) rotate(-5deg); transition: transform 650ms cubic-bezier(.2,.75,.2,1); }
+.swaps-cover-phone { position: absolute; height: 88%; aspect-ratio: .47; top: 6%; left: 39%; padding: 4px; border: 1px solid #66616e; border-radius: 20px; background: #19191d; box-shadow: 2px 3px 0 #08080a, 6px 16px 24px #30214d28; transform: translateX(-50%); transition: transform 650ms cubic-bezier(.2,.75,.2,1); }
 .swaps-cover-phone img { width: 100%; height: 100%; object-fit: contain; border-radius: 15px; background: white; }
 .swaps-candidate { position: absolute; width: 39%; max-width: 230px; height: auto; transition: transform 650ms cubic-bezier(.2,.75,.2,1); }
-.swaps-candidate-good { top: 43%; left: 48%; transform: rotate(2deg); }
+.swaps-candidate-good { top: 43%; left: 48%; transform: none; }
 @supports (height: 1cqh) {
   .swaps-cover-phone { padding: 1.2cqh; border-radius: 6cqh; }
   .swaps-cover-phone img { border-radius: 4.8cqh; }

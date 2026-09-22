@@ -24,12 +24,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  perspective: 1100px;
 }
 .checklist-phone {
   position: relative;
   flex: 0 0 auto;
-  height: 78%;
+  height: 88%;
   aspect-ratio: 0.47;
   padding: 4px;
   border: 1px solid #66616e;
@@ -40,12 +39,12 @@
 }
 .checklist-phone-overview {
   z-index: 1;
-  transform: translate(9%, -3%) rotate(-16deg) rotateY(10deg);
+  transform: translateY(-2%);
 }
 .checklist-phone-task {
   z-index: 2;
-  margin-left: -12px;
-  transform: translate(-5%, 4%) rotate(12deg) rotateY(-10deg);
+  margin-left: 24px;
+  transform: translateY(2%);
 }
 .checklist-phone-screen {
   width: 100%;
@@ -59,8 +58,8 @@
 .checklist-overview-screen img { height: auto; max-width: none; }
 .checklist-cover-large { height: clamp(340px, 50vw, 600px); }
 @supports (height: 1cqh) {
-  .checklist-phone { height: min(78cqh, 78cqw); padding: 1.2cqh; border-radius: 6cqh; }
-  .checklist-phone-task { margin-left: -4cqh; }
+  .checklist-phone { height: min(88cqh, 85cqw); padding: 1.2cqh; border-radius: 6cqh; }
+  .checklist-phone-task { margin-left: 6cqh; }
   .checklist-phone-screen { border-radius: 4.8cqh; }
 }
  .checklist-phones { transition: transform 500ms ease; }

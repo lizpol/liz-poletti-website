@@ -306,7 +306,7 @@ export const fosterStudy: StudyContent = {
       link: { href: "https://www.fosterthefamily.org/donate", label: "View the live Donate page" },
     },
   ],
-  outcomeTitle: "A focused contribution",
-  outcome: "This was a short engagement on selected pages, with limited involvement in the wider site. I left a clearer structure, more purposeful language and designs that better connected the mission to getting support and giving it. The screenshots show the current live pages, which may have evolved since my work.",
+  outcomeTitle: "A short engagement. A clearer direction.",
+  outcome: "I joined with a brief to redesign a few key pages and brought language, information architecture and visual design into the same conversation. I clarified the routes for families and supporters, gave services a more understandable hierarchy, and shaped copy around what visitors needed to know and do. Each design decision had a purpose: helping people find support, understand the mission or choose how to contribute. Within a short engagement and a defined scope, I gave the Homepage, Get Help and Donate pages a more coherent structure and a clearer rationale — connecting the organisation’s message to practical next steps.",
   related: [related.nvoye, related.squadra],
 };

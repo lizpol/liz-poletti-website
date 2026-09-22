@@ -1,0 +1,74 @@
+/* Shared silver hardware treatment; screen content and cover layouts stay independent. */
+.foster-cover .foster-monitor-screen,
+.nvoye-cover .nvoye-device-screen {
+  position: relative;
+  padding: 8px 6px 10px;
+  border: 1px solid #9ca3ac;
+  border-radius: 11px;
+  background: linear-gradient(125deg, #f8f9fa 0%, #c8cdd3 30%, #e9ecef 52%, #b5bdc6 100%);
+  box-shadow: inset 0 1px 0 #ffffff, inset 0 -1px 0 #8e969f, 0 2px 1px #818a9480, 0 14px 24px #263d5c24;
+}
+.foster-monitor-screen::before,
+.nvoye-device-screen::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: calc(50% - 1.5px);
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #3f4b57;
+  box-shadow: inset 0 0 0 1px #78838e;
+}
+.foster-cover .foster-monitor-screen img,
+.nvoye-cover .nvoye-dashboard {
+  box-shadow: 0 0 0 1px #434951, 0 0 0 2px #8d949d;
+}
+.foster-cover .foster-monitor-stand,
+.nvoye-cover .nvoye-monitor-stand {
+  background: linear-gradient(90deg, #a0a8b1, #e4e7eb 25%, #cdd2d8 65%, #9ca5af);
+  box-shadow: inset 0 5px 5px #58637130;
+}
+.foster-cover .foster-monitor-stand::after,
+.nvoye-cover .nvoye-monitor-stand::after {
+  height: 5px;
+  border-radius: 50% 50% 3px 3px;
+  background: linear-gradient(#edf0f3, #b9c0c8 65%, #8c959f);
+  border-bottom: 1px solid #919aa4;
+  box-shadow: 0 4px 6px #263d5c20;
+}
+.checklist-cover .checklist-phone,
+.swaps-cover .swaps-cover-phone {
+  border-color: #949da8;
+  background: linear-gradient(115deg, #fcfdff 0%, #c4cbd3 24%, #edf0f4 48%, #a6b0bc 78%, #e4e9ef 100%);
+  box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #98a2ae, 1px 2px 0 #87929e, 3px 4px 0 #b6bec8, 8px 16px 22px #30214d2b;
+}
+.checklist-cover .checklist-phone-screen,
+.swaps-cover .swaps-cover-phone img {
+  box-shadow: 0 0 0 1px #4c535c;
+}
+/* Small hardware details sit on the bezel, leaving the interface unobscured. */
+.checklist-phone::before,
+.swaps-cover-phone::before {
+  content: '';
+  position: absolute;
+  right: -3px;
+  top: 28%;
+  width: 2px;
+  height: 12%;
+  border-radius: 0 2px 2px 0;
+  background: linear-gradient(#dbe1e8, #8f9aa8, #dbe1e8);
+  box-shadow: 1px 0 1px #66738340;
+}
+.checklist-phone::after,
+.swaps-cover-phone::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 42%;
+  width: 16%;
+  height: 2px;
+  border-radius: 2px;
+  background: #737e8b;
+  box-shadow: 0 1px 0 #ffffffb3;
+}
