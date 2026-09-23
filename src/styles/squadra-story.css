@@ -1,0 +1,90 @@
+.squadra-device-section {
+  border-top: 1px solid #e2e8f0;
+  padding: 3rem 0 5rem;
+}
+
+.squadra-device-heading {
+  margin-bottom: 2.5rem;
+  max-width: 44rem;
+}
+
+.squadra-device-heading h2 {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: -.035em;
+}
+
+.squadra-device-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: 2rem;
+}
+
+.squadra-device-summary {
+  margin-top: 1.25rem;
+  max-width: 52ch;
+  color: #64748b;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.squadra-device-visual {
+  margin: 0;
+  min-width: 0;
+}
+
+.squadra-device-visual figcaption {
+  margin-top: 1.25rem;
+  color: #64748b;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+@media (min-width: 1024px) {
+  .squadra-device-section { padding: 4rem 0 7rem; }
+  .squadra-device-heading { margin-bottom: 3.5rem; }
+  .squadra-device-grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    column-gap: 4rem;
+  }
+}
+
+/* Keep the product in view only when the viewport has room for it. */
+@media (min-width: 1024px) and (min-height: 800px) {
+  .squadra-device-visual { position: sticky; top: 8rem; }
+  .squadra-device-visual img { max-height: calc(100vh - 13rem); object-fit: contain; }
+}
+
+.squadra-story-copy {
+  max-width: 65ch;
+  color: #475569;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.squadra-story-copy h3:not(:first-child) {
+  margin-top: 3rem;
+}
+
+.squadra-story-copy h3 {
+  margin-bottom: 1.25rem;
+  color: #0f172a;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -.02em;
+}
+
+.squadra-story-copy p + p {
+  margin-top: 1.25rem;
+}
+
+/* Restrained emphasis; blue is reserved for links. */
+.squadra-story-copy strong {
+  color: #1e293b;
+  font: inherit;
+  font-weight: 500;
+}

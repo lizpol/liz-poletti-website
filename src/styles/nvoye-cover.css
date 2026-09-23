@@ -1,4 +1,4 @@
-.nvoye-cover { position: relative; width: 100%; height: 100%; container-type: size; display: grid; place-items: center; overflow: hidden; background: radial-gradient(ellipse at 50% 30%, #f2f8ff, #dcecfb 60%, #bed5ed); }
+.nvoye-cover { position: relative; width: 100%; height: 100%; container-type: size; display: grid; place-items: center; overflow: hidden; background: radial-gradient(ellipse at 50% 30%, #dfe8f7, #bdcee9 60%, #99b2d8); }
 .nvoye-device { position: relative; width: 86%; max-width: 500px; transition: transform 600ms cubic-bezier(.2,.75,.2,1); }
 .nvoye-device-screen { padding: 6px; background: #191c24; border: 1px solid #555b68; border-radius: 10px; box-shadow: 0 14px 24px #263d5c25; }
 .nvoye-monitor-stand { position: relative; height: 22px; width: 15%; margin: auto; background: linear-gradient(90deg, #a4a9b3, #dadde3 48%, #9ba1ad); }

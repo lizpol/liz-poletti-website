@@ -44,12 +44,12 @@ const cardConfig: Record<string, { img: string; bg: string; fit: string; parent?
   },
   caveo: {
     img: caveoImage,
-    bg: "bg-[radial-gradient(ellipse_at_top,#edf6ff_0%,#dcecfb_60%,#cbdff3_100%)]",
+    bg: "bg-[radial-gradient(ellipse_at_top,#eaf7f5_0%,#cfe9e5_60%,#b6dcd7_100%)]",
     fit: "object-contain py-4",
   },
   nvoye: {
     img: "",
-    bg: "bg-[#dcecfb]",
+    bg: "bg-[#bdcee9]",
     fit: "object-contain",
   },
   foster: {
@@ -390,8 +390,8 @@ export default function Home() {
             transition={{ duration: 0.6 }}
           >
             <span className="portfolio-eyebrow">What I do</span>
-            <h2>Considered from <em>every angle.</em></h2>
-            <p>Structure, interfaces, and words — designed to work together.</p>
+            <h2>Designing what users <em>experience.</em></h2>
+            <p>From research and structure to interactions, interfaces and words.</p>
           </motion.div>
 
           {/* Capabilities Accordion */}

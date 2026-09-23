@@ -8,10 +8,10 @@ export default function ChecklistCover({ large = false }: { large?: boolean }) {
     <div className="checklist-study">
       {[{ src: overview, label: "Task list and completion progress", list: true }, { src: task, label: "Task instructions, attachments and completion", list: false }].map(({ src, label, list }) => (
         <figure key={src}>
-          <a className={`checklist-study-phone${list ? " checklist-study-list" : ""}`} href={src} target="_blank" rel="noopener noreferrer" aria-label={`Open full screen: ${label}`}>
+          <div className={`checklist-study-phone${list ? " checklist-study-list" : ""}`}>
             <img src={src} alt={label} />
-          </a>
-          <figcaption>{label}<span>Click to view full screen</span></figcaption>
+          </div>
+          <figcaption>{label}</figcaption>
         </figure>
       ))}
     </div>

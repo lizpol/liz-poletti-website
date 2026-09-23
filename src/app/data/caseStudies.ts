@@ -5,6 +5,7 @@ import checklistTemplate from "../../imports/Checklist-template.png";
 import newShift from "../../imports/New-shift.png";
 import mobileTasks from "../../imports/Mobile-tasks.png";
 import checklistReview from "../../imports/Manager-review.png";
+import checklistTablet from "../../imports/checklists-tablet.png";
 import swapHero from "../../imports/Swap-real.png";
 import swapRules from "../../imports/Shift-swap-rules.png";
 import swapReview from "../../imports/Manager-review-1.png";
@@ -60,34 +61,47 @@ export const checklistStudy: StudyContent = {
     title: "Connecting the schedule to the work",
     paragraphs: [
       "Squadra connects managers and employees in businesses that work in shifts. Teams could see when they were working, but instructions still lived in messages, paper notes and verbal handovers.",
-      "I owned Checklists from research and framing through UX, UI and handoff. Conversations with managers pointed to a simple need: attach tasks to the shift itself, give workers the right context and make completion visible without constant check-ins.",
+      "I owned Checklists from research and framing through UX, UI and handoff. Conversations with managers pointed to a need for clear task guidance and visible completion without constant check-ins. Our initial direction tied tasks closely to individual shifts; research later challenged that assumption.",
     ],
   },
   sections: [
     {
       id: "templates", label: "01 · Build", title: "Write the routine once",
       paragraphs: ["Instructions were scattered across messages and handovers. I brought them into reusable checklist templates, with descriptions, photos and files attached to each task, so managers could define a routine once and give every shift the same starting point."],
+      layout: "balanced",
       images: [{ src: checklistTemplate, alt: "Checklist template editor with task descriptions and attachments" }],
     },
     {
       id: "assignment", label: "02 · Assign", title: "Make tasks part of planning",
       paragraphs: ["A separate task tool would add another step to a busy planning routine. I placed checklist selection inside shift creation, letting managers assign opening, closing and maintenance routines while they schedule the work."],
-      layout: "compact",
+      layout: "balanced",
       images: [{ src: newShift, alt: "Shift creation form with the option to add checklists" }],
     },
     {
       id: "completion", label: "03 · Complete", title: "Keep guidance close at hand",
       paragraphs: ["Workers needed guidance they could use mid-shift. I kept instructions, progress and completion together on their existing devices, with optional notes and photos to record what happened without turning every task into an admin exercise."],
-      layout: "compact",
+      layout: "balanced",
       images: [{ src: mobileTasks, alt: "Mobile task list and task details with completion controls" }],
     },
     {
       id: "review", label: "04 · Review", title: "Oversight without interruption",
       paragraphs: ["Managers needed visibility without constant check-ins. I organised review around what was done, by whom and when, with incomplete tasks flagged and notes beside the relevant task. Comments keep follow-up in context after the shift."],
+      layout: "balanced",
       images: [{ src: checklistReview, alt: "Manager review showing task completion, notes and attached evidence" }],
     },
+    {
+      id: "tablet-research", label: "05 · Iterate", title: "Research reshaped the shared tablet experience",
+      paragraphs: [
+        "Our initial approach connected tasks closely to individual shifts. Research showed that teams often organised this work collectively: many tasks belonged to the day or the team, rather than to one employee’s shift. That finding challenged the way we had structured the feature.",
+        "We revisited the product model and designed shared daily checklists around that behaviour. On the workplace tablet, employees could see the day’s checklists and completion progress together. The iteration made the team’s way of working the starting point for the design.",
+        "Because employees used the tablet briefly while working, I prioritised quick access to tasks, clear completion states and instructions alongside each action. The shared overview made progress visible without asking people to navigate through individual shifts to understand the day’s work.",
+      ],
+      layout: "balanced",
+      images: [{ src: checklistTablet, alt: "Shared tablet showing daily opening and closing checklists, task instructions and completion progress", caption: "The iterated tablet experience · Shared daily checklists and visible team progress" }],
+    },
   ],
-  outcome: "An end-to-end checklist flow, from reusable templates and shift assignment to completion and review. The design connects manager oversight with practical guidance for workers across desktop, tablet and mobile.",
+  outcomeTitle: "Connecting research, product logic and everyday use",
+  outcome: "I designed Checklists as a connected workflow, from reusable instructions and planning to completion and review, balancing managers’ need for visibility with employees’ need to get on with the work. My contribution went beyond the screens: I used research to challenge our initial assumptions, helped reshape the product model around shared responsibility, and translated that logic into clear interactions across desktop, tablet and mobile. Reusing existing workflows, keeping guidance close to each task and making progress visible gave the feature a coherent place within Squadra.",
   related: [related.swaps, related.squadra],
 };
 
@@ -120,7 +134,7 @@ export const swapsStudy: StudyContent = {
     },
     {
       id: "apply", label: "03 · Apply", title: "Show relevant opportunities",
-      paragraphs: ["A marketplace is only useful if the offers are relevant. I used eligibility filtering and visible qualification badges to help workers understand which shifts suited them and what they were applying for."],
+      paragraphs: ["I designed the marketplace to show employees only the shift swaps they were eligible for, based on the shift requirements and swap rules set by their manager. This kept the available offers relevant and removed the need to check eligibility themselves. After applying, employees could follow the status of their applications in the same place."],
       layout: "compact",
       images: [{ src: application, alt: "Shift marketplace showing eligibility details and an application flow" }],
     },
