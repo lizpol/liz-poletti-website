@@ -6,6 +6,7 @@ import newShift from "../../imports/New-shift.png";
 import mobileTasks from "../../imports/Mobile-tasks.png";
 import checklistReview from "../../imports/Manager-review.png";
 import checklistTablet from "../../imports/checklists-tablet.png";
+import swapsDecisionTree from "../../imports/swaps-decision-tree.png";
 import swapHero from "../../imports/Swap-real.png";
 import swapRules from "../../imports/Shift-swap-rules.png";
 import swapReview from "../../imports/Manager-review-1.png";
@@ -18,6 +19,9 @@ import planReady from "../../imports/5.png";
 import appointment from "../../imports/6.png";
 import planComplete from "../../imports/7.png";
 import review from "../../imports/8.png";
+import nvoyeResearchThemes from "../../imports/nvoye-research-themes.svg";
+import nvoyeResearchDirection from "../../imports/nvoye-research-direction.svg";
+import nvoyeResearchTesting from "../../imports/nvoye-research-testing.svg";
 import connectionsDesktop from "../../imports/Connections.png";
 import connectionsMobile from "../../imports/Connections-mobile.png";
 import groupsDesktop from "../../imports/Groups.png";
@@ -37,7 +41,7 @@ import fosterGiving from "../../imports/foster/donate-giving.jpg";
 const squadraParent = { label: "Squadra", href: "/work/squadra" };
 const squadraMeta = [
   { label: "Role", value: "UX/UI Designer & UX Writer" },
-  { label: "Team", value: "Design lead · 1 PM · 3 engineers · 1 founder" },
+  { label: "Team", value: "2 founders, 1 designer, 5 developers" },
   { label: "Project", value: "Add-on within Squadra" },
 ];
 const related = {
@@ -68,25 +72,23 @@ export const checklistStudy: StudyContent = {
     {
       id: "templates", label: "01 · Build", title: "Write the routine once",
       paragraphs: ["Instructions were scattered across messages and handovers. I brought them into reusable checklist templates, with descriptions, photos and files attached to each task, so managers could define a routine once and give every shift the same starting point."],
-      layout: "balanced",
       images: [{ src: checklistTemplate, alt: "Checklist template editor with task descriptions and attachments" }],
     },
     {
       id: "assignment", label: "02 · Assign", title: "Make tasks part of planning",
       paragraphs: ["A separate task tool would add another step to a busy planning routine. I placed checklist selection inside shift creation, letting managers assign opening, closing and maintenance routines while they schedule the work."],
-      layout: "balanced",
+      layout: "compact",
       images: [{ src: newShift, alt: "Shift creation form with the option to add checklists" }],
     },
     {
       id: "completion", label: "03 · Complete", title: "Keep guidance close at hand",
       paragraphs: ["Workers needed guidance they could use mid-shift. I kept instructions, progress and completion together on their existing devices, with optional notes and photos to record what happened without turning every task into an admin exercise."],
-      layout: "balanced",
+      layout: "compact",
       images: [{ src: mobileTasks, alt: "Mobile task list and task details with completion controls" }],
     },
     {
       id: "review", label: "04 · Review", title: "Oversight without interruption",
       paragraphs: ["Managers needed visibility without constant check-ins. I organised review around what was done, by whom and when, with incomplete tasks flagged and notes beside the relevant task. Comments keep follow-up in context after the shift."],
-      layout: "balanced",
       images: [{ src: checklistReview, alt: "Manager review showing task completion, notes and attached evidence" }],
     },
     {
@@ -96,19 +98,18 @@ export const checklistStudy: StudyContent = {
         "We revisited the product model and designed shared daily checklists around that behaviour. On the workplace tablet, employees could see the day’s checklists and completion progress together. The iteration made the team’s way of working the starting point for the design.",
         "Because employees used the tablet briefly while working, I prioritised quick access to tasks, clear completion states and instructions alongside each action. The shared overview made progress visible without asking people to navigate through individual shifts to understand the day’s work.",
       ],
-      layout: "balanced",
       images: [{ src: checklistTablet, alt: "Shared tablet showing daily opening and closing checklists, task instructions and completion progress", caption: "The iterated tablet experience · Shared daily checklists and visible team progress" }],
     },
   ],
   outcomeTitle: "Connecting research, product logic and everyday use",
   outcome: "I designed Checklists as a connected workflow, from reusable instructions and planning to completion and review, balancing managers’ need for visibility with employees’ need to get on with the work. My contribution went beyond the screens: I used research to challenge our initial assumptions, helped reshape the product model around shared responsibility, and translated that logic into clear interactions across desktop, tablet and mobile. Reusing existing workflows, keeping guidance close to each task and making progress visible gave the feature a coherent place within Squadra.",
-  related: [related.swaps, related.squadra],
+   related: [related.swaps, related.squadra],
 };
 
 export const swapsStudy: StudyContent = {
   name: "Shift Swaps",
   category: "Squadra feature design",
-  title: "A simpler way to find cover.",
+  title: "A better way to change plans.",
   lead: "Helping employees arrange shift replacements while giving managers the context to approve them.",
   parent: squadraParent,
   hero: { src: swapHero, alt: "Squadra shift swap management view with a request open for review" },
@@ -124,27 +125,40 @@ export const swapsStudy: StudyContent = {
     {
       id: "rules", label: "01 · Configure", title: "Set the rules upfront",
       paragraphs: ["Manually checking every replacement repeated the same work. I moved eligibility, notice periods and deadlines into an upfront setup, so each request could follow the manager’s rules without starting the checks again."],
+      layout: "balanced",
       images: [{ src: swapRules, alt: "Shift swap settings for eligibility, notice periods and deadlines" }],
     },
     {
       id: "offer", label: "02 · Offer", title: "Start with the shift",
       paragraphs: ["Workers needed to find cover without chasing messages. I started the offer flow from their shift, added a short message and made its review status visible, keeping both the request and its progress in one place."],
-      layout: "compact",
+      layout: "balanced",
       images: [{ src: offer, alt: "Mobile screens for creating a swap offer and following its status" }],
     },
     {
-      id: "apply", label: "03 · Apply", title: "Show relevant opportunities",
-      paragraphs: ["I designed the marketplace to show employees only the shift swaps they were eligible for, based on the shift requirements and swap rules set by their manager. This kept the available offers relevant and removed the need to check eligibility themselves. After applying, employees could follow the status of their applications in the same place."],
-      layout: "compact",
+      id: "apply", label: "03 · Apply", title: "Only relevant opportunities",
+      paragraphs: ["A marketplace is only useful if the offers are relevant. I designed the marketplace to show employees only the shift swaps they were eligible for, based on the shift requirements and swap rules set by their manager. This kept all the available shift offers relevant. After applying, employees could follow the status of their applications in the same place."],
+      layout: "balanced",
       images: [{ src: application, alt: "Shift marketplace showing eligibility details and an application flow" }],
     },
     {
       id: "assignment", label: "04 · Assign", title: "Give managers the full picture",
-      paragraphs: ["Approval needed more than a name. I brought applicants, workload and eligibility flags into one review view, then connected assignment to the schedule update so agreeing a swap and recording it became one action."],
+      paragraphs: ["Approval needed more than a name. I brought applicants and their respective work data into one review view, so that managers could make informed decisions. Then, I connected assignment to the schedule update so agreeing to a swap and recording it became one action."],
+      layout: "balanced",
       images: [{ src: swapReview, alt: "Manager comparison of swap applicants, workload and eligibility flags" }],
     },
+    {
+      id: "change-logic", label: "05 · Changes", title: "The decisions behind a simple experience",
+      paragraphs: [
+        "A swap could change after it had been offered or applied for. Updates to a shift, an employee’s contract or their availability could affect who was still eligible. I mapped those dependencies to define how the product should respond, rather than leave employees and managers to reconcile the changes themselves.",
+        "This decision tree shows one part of that work: when to recalculate eligibility, remove an offer, cancel an application or update the swap details. It also distinguishes between changes that can happen quietly and those that need a notification or a record in the activity timeline, depending on whether someone has already applied or created the offer.",
+        "Working through these branches connected system behaviour with communication. Each change needed an appropriate response, with enough context for the people affected to understand what had happened.",
+      ],
+      layout: "stacked",
+      images: [{ src: swapsDecisionTree, alt: "Decision tree mapping eligibility recalculation after a change, including swap cancellation, offer removal, application status updates, notifications and timeline activity", caption: "An example of the change logic: defining the system response and communication for each affected person." }],
+    },
   ],
-  outcome: "A connected swap flow covering rules, offers, applications and assignment. Employees can initiate requests, managers can review them with context, and the approved replacement carries through to the schedule.",
+  outcomeTitle: "Clarity, even when circumstances change",
+  outcome: "I designed Shift Swaps around the decisions people needed to make, supported by rules that kept the process coherent as circumstances changed. That meant connecting eligibility, applications, approval and scheduling, while defining when to update the interface, explain a change or ask someone to act. The result was a considered balance between employee autonomy and manager oversight: relevant opportunities for workers, informed decisions for managers, and clear communication between them. The simplicity of the experience came from resolving the complexity behind it.",
   related: [related.checklists, related.squadra],
 };
 
@@ -211,57 +225,83 @@ export const nvoyeStudy: StudyContent = {
   name: "Nvoye",
   category: "Professional community",
   title: "A community built on trust.",
-  lead: "Designing a private space for diplomats to connect, meet and stay in touch.",
+  lead: "Shaping a private diplomatic community from the ground up, through research, interviews and close collaboration with its founders.",
   hero: { src: messagesTablet, alt: "Nvoye messaging experience on a tablet" },
   meta: [
     { label: "Role", value: "Product Designer" },
-    { label: "Team", value: "Me + 3 designers · 2 founders · 5 developers" },
+    { label: "Team", value: "4 designers, 2 founders, 5 developers, 3 marketing experts" },
     { label: "Timeline", value: projects.nvoye.timeline },
     { label: "Platforms", value: "Desktop, tablet & mobile" },
   ],
   context: {
-    title: "A professional space for diplomats",
+    title: "Building Nvoye from the ground up",
     paragraphs: [
-      "Nvoye is a private platform for the diplomatic community. Members need to find relevant people and opportunities while understanding who can see their activity and the spaces they join.",
-      "As a Product Designer, I worked with three other designers, two founders, two marketing experts and five developers. Together, we shaped profiles, connections, events, groups and messaging around professional context and clear privacy cues. I also helped shape the UX writing, making the language clear and appropriate for the diplomatic community.",
+      "A new posting means rebuilding everyday life as well as a professional network. Diplomats arrive in unfamiliar places, often with limited time to find local support, meet people and help their families settle in. Nvoye began as a dedicated space for that shared experience: a way to build useful professional connections and find community beyond work.",
+      "I worked closely with the founders and design team from the ground up, contributing to research, interface design and UX writing. Over two years, the project grew to include a larger development and marketing team, alongside diplomatic advisors.",
     ],
   },
   sections: [
     {
-      id: "connections", label: "01 · Connections", title: "Put professional context first",
-      paragraphs: ["Members needed to judge professional relevance. We centred profiles on role, embassy, posting and mutual connections, and separated existing contacts, requests and discovery to make the network easier to navigate."],
+      id: "research", label: "01 · Research", title: "Understanding life beyond the posting",
+      paragraphs: [
+        "Interviews helped us understand the difference between a professional network and a sense of belonging. Diplomats could have established work contacts and still find it difficult to build friendships outside work, particularly when arriving in a new country with unpredictable schedules or language barriers.",
+        "The interviews brought practical and social needs together: adjusting to a different culture, navigating local services, finding activities and supporting family members. Shared interests could offer a route into local life, while unpredictable schedules made it harder to build those connections.",
+        "We also heard contrasting expectations. One participant preferred to keep diplomatic relationships professional and build friendships elsewhere. Others valued a community where personal and official life overlapped. Alongside differing security restrictions, this made choice and clear boundaries essential; a shared profession did not mean a shared appetite for openness.",
+      ],
+      images: [{ src: nvoyeResearchThemes, alt: "Interview themes: belonging beyond work, different family circumstances and trust as a condition for participation" }],
+    },
+    {
+      id: "research-synthesis", label: "02 · Synthesis", title: "Turning conversations into a product direction",
+      paragraphs: [
+        "We translated interview material into problem statements, distinguishing the experiences of diplomats arriving alone, moving with families and looking for connections through language or shared interests. This made the discussion more specific than a general ambition to build a network.",
+        "The opportunity was more specific than a broad social feed or a professional directory. Members needed ways to find people through shared interests and language, discover activities around a posting and understand the boundaries of a space before participating. We mapped these needs to discovery, filters, groups and onboarding, treating them as directions to explore rather than validated answers.",
+      ],
+      images: [{ src: nvoyeResearchDirection, alt: "Research needs mapped to opportunities for discovery, relevant events and guided onboarding" }],
+    },
+    {
+      id: "connections", label: "03 · Connections", title: "Put professional context first",
+      paragraphs: ["A shared diplomatic background could make an introduction relevant, but members still needed to decide what kind of relationship they wanted to build. We centred profiles on role, embassy, posting and mutual connections, giving members context before they reached out. Separating existing contacts, requests and discovery supported different intentions: maintaining a relationship, responding to an introduction or finding someone new."],
       layout: "devices",
       images: [
-        { src: connectionsDesktop, alt: "Nvoye desktop connections view with professional profiles" },
+        { src: connectionsDesktop, frame: "laptop", alt: "Nvoye desktop connections view with professional profiles" },
         { src: connectionsMobile, alt: "Nvoye mobile network activity view" },
       ],
     },
     {
-      id: "events", label: "02 · Events", title: "Make discovery purposeful",
-      paragraphs: ["Event discovery needed both relevance and discretion. We grouped opportunities by theme and showed visibility and format upfront, helping members understand the occasion before choosing to take part."],
+      id: "events", label: "04 · Events", title: "Make discovery purposeful",
+      paragraphs: ["Events offered a bridge into life at a posting: cultural activities, shared interests and opportunities to meet beyond official duties. Research also surfaced the difficulty of keeping track of invitations in busy chat threads. We designed discovery around the decision to attend: what the occasion was about, how it would take place and how visible participation would be. Themes, format and visibility information helped members assess an opportunity before committing to it."],
       layout: "devices",
       images: [
-        { src: eventsDesktop, alt: "Nvoye event explorer organised by theme" },
+        { src: eventsDesktop, frame: "laptop", alt: "Nvoye event explorer organised by theme" },
         { src: eventMobile, alt: "Nvoye mobile event details" },
       ],
     },
     {
-      id: "groups", label: "03 · Groups", title: "Explain the space before joining",
-      paragraphs: ["Joining a group means understanding its boundaries. We put its purpose, rules, visibility and administrators close to the conversation, making expectations clear across desktop and mobile."],
+      id: "groups", label: "05 · Groups", title: "Explain the space before joining",
+      paragraphs: ["For diplomats, joining a group could raise questions about professional visibility as well as personal interest. Participants wanted to know who was already involved and what the group did; restrictions on participation could differ between countries. We brought each group’s purpose, rules, visibility and administrators into the experience, so members could assess the space before joining. Clear language and consistent cues across devices supported informed participation."],
       layout: "devices",
       images: [
-        { src: groupsDesktop, alt: "Nvoye desktop group page with purpose, privacy and administrator information" },
+        { src: groupsDesktop, frame: "laptop", alt: "Nvoye desktop group page with purpose, privacy and administrator information" },
         { src: groupMobile, alt: "Nvoye mobile community group" },
       ],
     },
     {
-      id: "messages", label: "04 · Messages", title: "Keep conversations easy to navigate",
-      paragraphs: ["Conversations needed to stay recognisable in a professional setting. We used names and titles for context, with a clear overview, search and filters to help members find the right thread across desktop and tablet."],
-      images: [{ src: messagesDesktop, alt: "Nvoye desktop messaging overview with contacts and conversations" }],
+      id: "messages", label: "06 · Messages", title: "Keep conversations easy to navigate",
+      paragraphs: ["Conversations could span professional introductions and personal interests. Messaging needed to preserve enough identity and context for members to recognise a contact, without assuming that every connection was already a close relationship. Names and titles helped members recognise who they were speaking with, while an overview, search and filters helped them return to the right conversation across desktop and tablet."],
+      images: [{ src: messagesDesktop, frame: "laptop", alt: "Nvoye desktop messaging overview with contacts and conversations" }],
+    },
+    {
+      id: "usability-learning", label: "07 · Testing", title: "Testing what felt clear, and what did not",
+      paragraphs: [
+        "Usability sessions helped us examine how people understood the proposed experience. Participants asked for clearer direction at the start and an explanation of the onboarding questions. Some wanted more information about group members and activities before joining; others expected to invite people while creating an event.",
+        "We grouped observations by onboarding, groups, events and the overall experience. This separated specific interaction problems from broader questions about the community’s purpose, family participation and privacy. It gave the team concrete areas to revisit, rather than treating positive overall feedback as proof that every part of the experience worked.",
+        "I translated these findings into clearer guidance at key decision points: explaining the purpose of onboarding questions, making group expectations explicit and helping members understand their next step. Bringing interface design and UX writing together allowed me to address uncertainty through both the structure of the experience and the language within it.",
+      ],
+      images: [{ src: nvoyeResearchTesting, alt: "Usability observations and design implications for onboarding guidance, group information and event invitations" }],
     },
   ],
-  outcomeTitle: "What we delivered",
-  outcome: "Together, we designed a cohesive community experience spanning professional profiles, connections, events, groups and messaging. Clear identity and privacy cues carry through the product, supported by consistent design patterns across devices.",
+  outcomeTitle: "Giving the community vision a research-led foundation",
+  outcome: "Research helped us define a community around the realities of diplomatic life: repeated moves, limited time, family needs and relationships that could be both personal and professional. As part of the design team, I helped translate those tensions into product structure, interface decisions and language. The resulting experience brought relevant people, groups and events together, with clear context to help members decide where and how to participate. We created a product for diplomats to build professional relationships, find people with shared interests and establish a support network as they settled into life in a new country.",
   related: [related.caveo, related.foster],
 };
 

@@ -1,0 +1,14 @@
+.nvoye-study-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .22fr); align-items: center; gap: clamp(12px, 3vw, 40px); padding: 24px 0; max-width: 1000px; margin: auto; }
+.nvoye-study-desktop { min-width: 0; }
+.nvoye-study-screen { padding: clamp(4px, .8vw, 9px); border: 1px solid #a7adb5; border-radius: 14px; background: linear-gradient(135deg, #f1f2f4, #939ba5 50%, #d9dde2); box-shadow: 0 15px 30px #25345412; }
+.nvoye-study-screen img { display: block; width: 100%; height: auto; border: 2px solid #41464e; border-radius: 7px; }
+.nvoye-study-stand { position: relative; width: 16%; height: clamp(16px, 3vw, 34px); margin: auto; background: linear-gradient(90deg, #9ca3ad, #e3e6ea 50%, #a1a8b2); }
+.nvoye-study-stand::after { content: ''; position: absolute; bottom: -4px; left: -45%; width: 190%; height: 5px; border-radius: 50% 50% 3px 3px; background: #b9c0c8; }
+.nvoye-study-mobile { padding: clamp(3px, .6vw, 6px); border: 1px solid #9da5af; border-radius: clamp(12px, 2vw, 24px); background: linear-gradient(135deg, #e8ebef, #99a2ad, #dce1e6); box-shadow: 0 12px 24px #25345415; }
+.nvoye-study-mobile img { display: block; width: 100%; height: auto; border-radius: clamp(8px, 1.5vw, 18px); }
+@media (max-width: 600px) {
+  .nvoye-study-hero { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .nvoye-study-mobile { width: 34%; min-width: 120px; justify-self: center; }
+}
+
+.nvoye-study-hero.nvoye-study-hero-messages { grid-template-columns: minmax(0, 1fr); max-width: 900px; }

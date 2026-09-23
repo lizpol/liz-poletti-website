@@ -112,7 +112,7 @@ export const projects: Record<string, Project> = {
     description: "A discrete professional platform designed for diplomats, emphasizing trust, professionalism, and meaningful interaction over social media dynamics.",
     role: "Product Designer",
     team: "Product Designer working with 3 other designers, 2 founders, and 5 developers",
-    timeline: "2022–2023",
+    timeline: "2024–2026",
     summary: "Nvoye is a private professional platform designed for the diplomatic community, emphasizing discretion, trust, and meaningful interaction. As a Product Designer, I collaborated with three other designers, two founders and five developers on community features, member profiles, messaging and product storytelling. I also helped shape the UX writing. The work required designing for professionalism and security while avoiding social media patterns that would undermine trust.",
     challenges: [
       "Design for discretion and professionalism in a sensitive context",

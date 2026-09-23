@@ -8,8 +8,6 @@ import heroImg from "../../imports/squadra-three-devices.png";
 import desktopImg from "../../imports/squadra-desktop.png";
 import tabletImg from "../../imports/squadra-tablet.png";
 import mobileImg from "../../imports/squadra-mobile.png";
-import ChecklistCover from "../components/ChecklistCover";
-import SwapsCover from "../components/SwapsCover";
 
 const sectionCopyClass = "squadra-story-copy";
 
@@ -17,13 +15,11 @@ const caseStudies = [
   {
     title: "Shift Checklists",
     description: "From setting up recurring tasks to completing them on shift.",
-    Cover: ChecklistCover,
     href: "/work/squadra-checklists",
   },
   {
     title: "Shift Swaps",
     description: "More flexibility for employees, with clear rules and manager oversight.",
-    Cover: SwapsCover,
     href: "/work/squadra-swaps",
   },
 ];
@@ -182,16 +178,13 @@ export default function SquadraCaseStudy() {
             <h2 id="case-studies-title" className="text-3xl md:text-4xl text-slate-900 tracking-tight mb-4">Two features, from the inside</h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-10">Explore the thinking and design decisions behind two additions to the Squadra ecosystem.</p>
             <div className="grid md:grid-cols-2 gap-8">
-              {caseStudies.map(({ title, description, Cover, href }) => (
+              {caseStudies.map(({ title, description, href }) => (
                 <Link key={href} to={href} className="project-link group rounded-2xl overflow-hidden bg-white border border-slate-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#201E50]">
-                  <div className="w-full h-[clamp(240px,25vw,320px)] overflow-hidden bg-[#ede9fe]">
-                    <Cover />
-                  </div>
                   <div className="p-6 md:p-8">
                     <h3 className="text-xl text-slate-900 mb-3">{title}</h3>
                     <p className="text-slate-600 leading-relaxed mb-6">{description}</p>
                     <span className="inline-flex items-center gap-2 text-sm font-bold text-[#5275aa]">
-                      Read the case study <ArrowRight aria-hidden="true" className="w-4 h-4" />
+                      View case study <ArrowRight aria-hidden="true" className="w-4 h-4" />
                     </span>
                   </div>
                 </Link>

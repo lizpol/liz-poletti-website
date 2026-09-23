@@ -3,12 +3,14 @@ import { Link } from "react-router";
 import { ArrowRight, Download } from "lucide-react";
 import Navigation from "./Navigation";
 import Breadcrumb from "./Breadcrumb";
+import LaptopFrame from "./LaptopFrame";
 
 export interface StudyImage {
   src: string;
   alt: string;
   caption?: string;
   preview?: "navigation";
+  frame?: "laptop";
 }
 
 export interface StudySection {
@@ -46,16 +48,18 @@ function StudyVisuals({ images, layout, linkImages }: { images: StudyImage[]; la
 
   return (
     <div className={grid}>
-      {images.map(({ src, alt, caption, preview }, index) => (
+      {images.map(({ src, alt, caption, preview, frame }, index) => (
         <figure key={src} className={`min-w-0 ${layout === "phones" ? "w-full max-w-[260px]" : layout === "compact" ? "w-full max-w-sm" : layout === "devices" && index > 0 ? "w-full max-w-[200px]" : ""}`}>
           <a href={linkImages ? src : undefined} target={linkImages ? "_blank" : undefined} rel={linkImages ? "noopener noreferrer" : undefined} aria-label={linkImages ? `Open full image: ${alt}` : undefined} className="block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#201E50]">
-            <img
+            {frame === "laptop" ? (
+              <LaptopFrame><img src={src} alt={alt} loading="lazy" decoding="async" /></LaptopFrame>
+            ) : <img
               src={src}
               alt={alt}
               loading="lazy"
               decoding="async"
               className={`w-full mx-auto ${layout === "balanced" ? "h-[clamp(300px,36vw,440px)] object-contain" : ""} ${preview === "navigation" ? "aspect-[21/1] object-cover object-top" : layout === "balanced" ? "" : "h-auto"} ${layout === "phones" ? "max-w-[260px]" : layout === "compact" ? "max-w-sm" : layout === "devices" && index > 0 ? "max-w-[200px]" : ""}`}
-            />
+            />}
           </a>
           {caption && <figcaption className="text-sm text-slate-500 leading-relaxed text-left mt-4">{caption}</figcaption>}
         </figure>
@@ -111,7 +115,7 @@ export default function CaseStudyLayout({ study, heroVisual, linkImages = true }
           </nav>
 
           {study.sections.map(({ id, label, title, paragraphs, images, layout, link }) => {
-            const paired = images?.length === 1;
+            const paired = images?.length === 1 && layout !== "stacked";
             return (
               <section key={id} id={id} aria-labelledby={`${id}-title`} className="scroll-mt-28 pb-20 md:pb-28">
                 <div className={paired ? "grid lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-16 items-start" : "space-y-10 md:space-y-12"}>

@@ -11,13 +11,11 @@ export default function SwapsCover({ study = false }: { study?: boolean }) {
         <a href={marketplace} target="_blank" rel="noopener noreferrer" aria-label="Open full marketplace screen" className="swaps-study-phone">
           <img src={marketplace} alt="Shift marketplace showing approved, pending and denied requests" />
         </a>
-        <figcaption>Shift marketplace</figcaption>
       </figure>
       <div className="swaps-study-candidates">
         {[{ src: goodCandidate, label: "Candidate meets all required skills" }, { src: badCandidate, label: "Candidate is missing a required skill" }].map(({ src, label }) => (
           <figure key={src}>
             <a href={src} target="_blank" rel="noopener noreferrer" aria-label={`Open full image: ${label}`}><img src={src} alt={label} /></a>
-            <figcaption>{label}</figcaption>
           </figure>
         ))}
       </div>
