@@ -301,7 +301,7 @@ export const nvoyeStudy: StudyContent = {
     },
   ],
   outcomeTitle: "Giving the community vision a research-led foundation",
-  outcome: "Research helped us define a community around the realities of diplomatic life: repeated moves, limited time, family needs and relationships that could be both personal and professional. As part of the design team, I helped translate those tensions into product structure, interface decisions and language. The resulting experience brought relevant people, groups and events together, with clear context to help members decide where and how to participate. We created a product for diplomats to build professional relationships, find people with shared interests and establish a support network as they settled into life in a new country.",
+  outcome: "Research helped us define a community around the realities of diplomatic life: repeated moves, limited time, family needs and relationships that could be both personal and professional. As part of the design team, I helped translate those tensions into product structure, interface decisions and language. The resulting experience brought relevant people, groups and events together, with clear context to help members decide where and how to participate. That balance between supporting belonging without assuming openness gave Nvoye its particular direction.",
   related: [related.caveo, related.foster],
 };
 
